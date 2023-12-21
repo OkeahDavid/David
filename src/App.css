@@ -23,6 +23,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* App.css */
+.App {
+  background-color: black;
+  color: white;
+}
+
+/* You may also want to style links or other elements specifically */
+a {
+  color: #0d6efd; /* Example blue color for links */
+}
+
 
 .App-link {
   color: #61dafb;
