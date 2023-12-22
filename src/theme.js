@@ -19,7 +19,7 @@ const theme = createTheme({
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontSize: 14,
     h1: {
-      fontSize: '2.5rem', // Example size
+      fontSize: '4rem', // Example size
     },
     // Add other custom typography settings
   },

@@ -1,0 +1,54 @@
+/* About.css */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Aligns items to the left, similar to Home.js */
+  padding-top: 0; /* Remove padding at the top if there's any */
+  height: auto;
+  padding-left: 200px; /* Adjust padding to match Home.js */
+}
+
+/* Apply your specific text styles here */
+.typography-body1 {
+  font-size: 22px; /* Your specified font size */
+  max-width: 40%; /* Maximum width of the text container */
+  text-align: left; /* Justified text alignment */
+  padding-bottom: 5px; /* Space at the bottom */
+  color: #FFFFFF; /* Adjust text color as needed */
+  /* Add other styles like font-family or weight as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 0 20px;
+  }
+  .typography-body1 {
+    font-size: 18px; /* Smaller font size for mobile */
+    max-width: 100%; /* Full width on smaller screens */
+    padding-bottom: 30px; /* Adjust padding for mobile */
+  }
+}
+
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates a two-column grid */
+  gap: 10px; /* Adjust the gap between items as necessary */
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  color: #FFFFFF; /* Sets the text color */
+}
+
+.tech-item {
+  display: flex;
+  align-items: center; /* Centers the bullet with the text */
+  font-size: 1rem; /* Adjust the font size as necessary */
+}
+
+.tech-item::before {
+  content: '►'; /* Adds a custom bullet */
+  color: #FF4545; /* Adjust the color of the bullet */
+  margin-right: 10px; /* Adjust space between the bullet and text */
+  /* Any other styles for the bullet */
+}
