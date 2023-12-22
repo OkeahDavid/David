@@ -10,12 +10,13 @@ import SidebarNav from './components/SidebarNav';
 
 import "./App.css";
 
+// App.js
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App" style={{ display: 'flex' }}>
         <SidebarNav />
-        <div id="content" style={{ flexGrow: 1 }}>
+        <div id="content" style={{ flexGrow: 1, marginLeft: '60px' /* Adjust to the width of your new sidebar */ }}>
           <Home />
           <About />
           <Experience />
@@ -26,5 +27,6 @@ function App() {
     </ThemeProvider>
   );
 }
+
 
 export default App;
