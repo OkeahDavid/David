@@ -20,7 +20,7 @@ const About = () => {
       </Typography>
 
       <Typography variant="h6" style={{ marginTop: '20px' }}>
-        Here are some technologies I have been working with:
+        Here are some technologies I work with:
       </Typography>
 
       <Box component="ul" className="tech-stack">
@@ -30,6 +30,9 @@ const About = () => {
           </Typography>
         ))}
       </Box>
+      <Typography variant="h6" style={{ marginTop: '0px' }}>
+        Outside of work I'm interested in games, anime, and football.
+      </Typography>
     </Box>
   );
 };
