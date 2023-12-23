@@ -1,0 +1,90 @@
+/* Experience.css */
+.experience-container {
+    display: flex;
+    color: #FFFFFF;
+    padding-top: 50px;
+    padding-left: 0px; /* Adjusted to match the rest of the page */
+    padding-right: 200px;
+    position: relative; /* Set position relative for absolute child positioning */
+  }
+  
+  .experience-selector {
+    position: absolute; /* Absolute positioning to prevent shifting */
+    left: 200px; /* Align to the padding of the container */
+    top: 50px; /* Align with the top of the experience details */
+    width: 250px; /* Set a fixed width to accommodate the longest shortName */
+    text-align: left;
+  }
+  
+  .company-name {
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+  }
+  
+  .company-name.active {
+    color: #FF4545; /* Highlight color for selected company */
+    font-weight: bold;
+  }
+  
+  .line {
+    position: absolute;
+    left: 450px; /* Position the line to the right of the company names */
+    top: 50px; /* Start at the same place as the selector */
+    height: 500px; /* Fixed height */
+    width: 2px;
+    background-color: #FF4545; /* Line color */
+  }
+  
+  .experience-details {
+    flex-grow: 1;
+    margin-left: 300px; /* Adjust this to prevent overlap with the selector */
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 2px solid #FF4545;
+  } 
+  
+  .experience-title, .experience-company, .experience-duration {
+    text-align: left;
+  }
+  
+  .experience-responsibilities {
+    padding-left: 0px; /* Adjust this value so the text aligns with the header text */
+  }
+  
+  .experience-item {
+    display: flex;
+    align-items: flex-start; /* Align the items to the start of the flex container */
+    font-size: 16px;
+    word-wrap: break-word;
+    max-width: 600px;
+}
+
+.experience-item::before {
+    content: '►';
+    color: #FF4545;
+    margin-right: 10px;
+    font-size: 20px;
+    /* Remove top positioning if not needed */
+}
+
+  
+  @media (max-width: 768px) {
+    .experience-selector {
+      position: static; /* Default positioning on mobile */
+      width: 100%; /* Full width on mobile */
+      text-align: left;
+      margin-bottom: 20px; /* Add space below the selector */
+    }
+  
+    .experience-details {
+      margin-left: 0;
+      border-left: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .company-name.active {
+      font-weight: normal;
+    }
+  }
