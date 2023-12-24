@@ -16,7 +16,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App" style={{ display: 'flex' }}>
         <SidebarNav />
-        <div id="content" style={{ flexGrow: 1, marginLeft: '60px' /* Adjust to the width of your new sidebar */ }}>
+        <div id="content" style={{ 
+          flexGrow: 1, 
+          marginLeft: '60px', // This pushes the content away from the left edge
+          marginRight: '200px', // This should be the width of the SidebarNav to prevent overlap
+          padding: '20px' // Optional padding for better content appearance
+        }}>
           <Home />
           <About />
           <Experience />
@@ -27,6 +32,5 @@ function App() {
     </ThemeProvider>
   );
 }
-
 
 export default App;

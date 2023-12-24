@@ -1,0 +1,117 @@
+/* projects.css */
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding-left: 200px; /* Adjust as needed for your sidebar */
+}
+
+.project-card {
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    position: relative; /* Needed for absolute positioning of child elements */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.project-title {
+    flex: 1;
+    text-align: left;
+}
+
+.icons-container {
+    display: flex;
+    gap: 8px;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.tech-stacks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.tech-chip {
+    background-color: #555;
+    color: #9f9f9f;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: default;
+    margin: 2px 0;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.project-link {
+    color: #FF4545;
+    margin-top: 10px;
+}
+
+.project-link svg {
+    fill: #FF4545; /* This sets the fill color for SVG icons */
+}
+
+
+.project-link:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        padding-left: 20px;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-title {
+        white-space: normal;
+    }
+
+    .icons-container {
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+}
