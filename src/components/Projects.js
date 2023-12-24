@@ -46,7 +46,7 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <Box className="projects-container">
+    <Box id="projects" className="projects-container">
       <Typography variant="h4" gutterBottom className="projects-header">
         PROJECTS
       </Typography>

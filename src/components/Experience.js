@@ -40,7 +40,7 @@ const Experience = () => {
   };
 
   return (
-    <Box className="experience-container">
+    <Box id="experience" className="experience-container">
       <Box className="experience-selector">
         {experiences.map((exp, index) => (
           <Typography key={index} 
