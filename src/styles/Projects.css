@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
-    padding-left: 200px; /* Adjust as needed for your sidebar */
+    padding-left: 180px; /* Adjust as needed for your sidebar */
 }
 
 .project-card {

@@ -6,7 +6,7 @@ import GithubIcon from '@mui/icons-material/GitHub';
 
 const SidebarNav = () => {
   const colors = {
-    background: '#000000', // Updated to the correct color value for black
+    // background: '#000000', // Removed this line to inherit the background color
     icons: '#FF4545',
     text: '#FF4545'
   };
@@ -31,7 +31,7 @@ const SidebarNav = () => {
         position: 'fixed',
         bottom: 100,
         right: 0,
-        bgcolor: colors.background,
+        // bgcolor: colors.background, // Removed this line
         zIndex: 1200,
         display: 'flex',
         flexDirection: 'column',
@@ -39,20 +39,20 @@ const SidebarNav = () => {
         padding: 2,
       }}
     >
-      <List sx={{ width: '100%' }}> 
+      <List sx={{ width: '100%' }}>
         {menuItems.map((item, index) => (
-          <ListItem 
-            button 
-            key={item.text} 
-            component="a" 
-            href={item.href} 
+          <ListItem
+            button
+            key={item.text}
+            component="a"
+            href={item.href}
             sx={{ color: colors.text, padding: 0, display: 'flex', justifyContent: 'flex-end' }} // Right-align the text
           >
             <ListItemText primary={`/${item.text.toLowerCase()}`} sx={{ textAlign: 'right', minWidth: 'fit-content' }} />
           </ListItem>
         ))}
       </List>
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: '0px' }}> 
+      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: '0px' }}>
         {renderIconButton(EmailIcon, 'mailto:okeahdavid@gmail.com', 'Email')}
         {renderIconButton(LinkedInIcon, 'https://www.linkedin.com/in/david-okeah', 'LinkedIn')}
         {renderIconButton(GithubIcon, 'https://github.com/OkeahDavid', 'GitHub')}

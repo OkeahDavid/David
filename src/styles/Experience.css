@@ -2,7 +2,7 @@
 .experience-container {
     display: flex;
     color: #FFFFFF;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 0px; /* Adjusted to match the rest of the page */
     padding-right: 200px;
     position: relative; /* Set position relative for absolute child positioning */
@@ -66,6 +66,14 @@
     margin-right: 10px;
     font-size: 20px;
     /* Remove top positioning if not needed */
+}
+
+.title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 200px;
 }
 
   

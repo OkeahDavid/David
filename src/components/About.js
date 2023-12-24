@@ -14,6 +14,9 @@ const About = () => {
 
   return (
     <Box id="about" className="about-container">
+      <Typography variant="h4" gutterBottom className="projects-header">
+        / about
+      </Typography>
       <Typography variant="body1" className="typography-body1">
         I'm a software developer based in Hamburg. I have great interest in data analysis, full-stack 
         development, artificial intelligence, computer vision, and everything in between.

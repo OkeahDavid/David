@@ -40,32 +40,38 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" className="experience-container">
-      <Box className="experience-selector">
-        {experiences.map((exp, index) => (
-          <Typography key={index} 
-                      className={`company-name ${index === selectedExpIndex ? 'active' : ''}`}
-                      onClick={() => handleExperienceSelect(index)}
-          >
-            {exp.shortName} {/* Use short name here */}
-          </Typography>
-        ))}
-      </Box>
-      <Box className="experience-details">
-        <Box className="experience-header">
-          <Typography variant="h5" className="experience-title">{experiences[selectedExpIndex].title}</Typography>
-          <Typography variant="subtitle1" className="experience-company">@ {experiences[selectedExpIndex].company}</Typography>
-          <Typography variant="subtitle2" className="experience-duration">{experiences[selectedExpIndex].duration}</Typography>
-        </Box>
-        <List className="experience-responsibilities">
-          {experiences[selectedExpIndex].responsibilities.map((item, idx) => (
-            <ListItem key={idx} className="experience-item">
-              <ListItemText primary={item} />
-            </ListItem>
+    <>
+      <Typography id="experience" variant="h4" className="title-header">
+        / experience
+      </Typography>
+
+      <Box  className="experience-container">
+        <Box className="experience-selector">
+          {experiences.map((exp, index) => (
+            <Typography key={index} 
+                        className={`company-name ${index === selectedExpIndex ? 'active' : ''}`}
+                        onClick={() => handleExperienceSelect(index)}
+            >
+              {exp.shortName}
+            </Typography>
           ))}
-        </List>
+        </Box>
+        <Box className="experience-details">
+          <Box className="experience-header">
+            <Typography variant="h5" className="experience-title">{experiences[selectedExpIndex].title}</Typography>
+            <Typography variant="subtitle1" className="experience-company">@ {experiences[selectedExpIndex].company}</Typography>
+            <Typography variant="subtitle2" className="experience-duration">{experiences[selectedExpIndex].duration}</Typography>
+          </Box>
+          <List className="experience-responsibilities">
+            {experiences[selectedExpIndex].responsibilities.map((item, idx) => (
+              <ListItem key={idx} className="experience-item">
+                <ListItemText primary={item} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

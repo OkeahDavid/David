@@ -52,3 +52,9 @@
   margin-right: 10px; /* Adjust space between the bullet and text */
   /* Any other styles for the bullet */
 }
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
