@@ -20,15 +20,35 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .about-container {
-    padding: 0 20px;
+/* Responsive adjustments */
+@media (max-width: 720px) {
+  .home-container,
+  .about-container,
+  .experience-container,
+  .projects-container {
+    padding: 0 15px;
   }
-  .typography-body1 {
-    font-size: 18px; /* Smaller font size for mobile */
-    max-width: 100%; /* Full width on smaller screens */
-    padding-bottom: 30px; /* Adjust padding for mobile */
+
+  .typography-h1 {
+    font-size: 1.8rem;
   }
+
+  .typography-h2,
+  .typography-body1,
+  .experience-item,
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .tech-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+
 }
 
 .tech-stack {

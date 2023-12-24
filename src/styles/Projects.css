@@ -91,27 +91,33 @@
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 720px) {
+    .home-container,
+    .about-container,
+    .experience-container,
     .projects-container {
-        padding-left: 20px;
-        align-items: center;
+      padding: 0 15px;
     }
-
+  
+    .typography-h1 {
+      font-size: 1.8rem;
+    }
+  
+    .typography-h2,
+    .typography-body1,
+    .experience-item,
+    .project-description {
+      font-size: 1rem;
+    }
+  
+    .tech-stack {
+      grid-template-columns: 1fr;
+    }
+  
     .project-card {
-        width: 90%;
+      width: 100%;
     }
-
-    .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .project-title {
-        white-space: normal;
-    }
-
-    .icons-container {
-        margin-top: 10px;
-        justify-content: flex-start;
-    }
-}
+  
+  
+  }
