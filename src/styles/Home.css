@@ -1,33 +1,29 @@
 /* Home.css */
+
+/* General styles */
 .home-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  min-height: auto; /* Change to min-height to allow content to expand */
-  padding-bottom: 0;
+  min-height: auto; /* Allows content to expand */
   padding-top: 25vh;
   padding-left: 200px;
+  padding-bottom: 0;
 }
-.david-text {
-    color: #FF4545; /* This sets the color of the text to the hex value you provided */
-  }
 
-/* Adjust the typography to match your design */
+.david-text {
+  color: #FF4545; /* Sets the text color */
+}
+
+/* Typography styles */
 .typography-h1 {
   margin: 0;
   font-size: 6rem; /* Adjust font size as needed */
   font-weight: bold; /* Adjust font weight as needed */
 }
 
-.typography-h2 {
-  margin: 0;
-  font-size: 2rem; /* Adjust font size as needed */
-  margin-top: 20px; /* Adjust margin as needed */
-}
-
-
-/* Responsive adjustments */
+/* Responsive adjustments for mobile view */
 @media (max-width: 720px) {
   .home-container,
   .about-container,
@@ -37,23 +33,29 @@
   }
 
   .typography-h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Smaller font size for iPhone 14 */
   }
 
-  .typography-h2,
   .typography-body1,
   .experience-item,
   .project-description {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Slightly smaller font size for better readability */
   }
 
   .tech-stack {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid for tech stack */
   }
 
   .project-card {
-    width: 100%;
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
   }
+}
 
-
+/* Additional adjustments for iPhone 14 Pro Max in portrait mode */
+@media (max-width: 1284px) {
+  /* Adjust styles as needed for larger screen sizes */
+  .typography-h1 {
+    font-size: 2rem; /* Slightly larger font size */
+  }
 }

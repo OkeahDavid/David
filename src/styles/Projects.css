@@ -1,123 +1,124 @@
 /* projects.css */
+
+/* Container styles for the projects section */
 .projects-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding-left: 180px; /* Adjust as needed for your sidebar */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding-left: 180px; /* Adjust for sidebar */
 }
 
+/* Styles for individual project cards */
 .project-card {
-    background-color: #333;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 300px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: 0.3s;
-    position: relative; /* Needed for absolute positioning of child elements */
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+  position: relative; /* For absolute positioning of child elements */
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05); /* Scale up on hover */
 }
 
+/* Header styles within the project card */
 .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .project-title {
-    flex: 1;
-    text-align: left;
+  flex: 1;
+  text-align: left;
 }
 
+/* Icon container styles */
 .icons-container {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
+/* Description styles for projects */
 .project-description {
-    font-size: 0.9rem;
-    margin: 10px 0;
-    text-align: left;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  text-align: left;
 }
 
+/* Tech stack styling within projects */
 .tech-stacks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .tech-chip {
-    background-color: #555;
-    color: #9f9f9f;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    cursor: default;
-    margin: 2px 0;
+  background-color: #555;
+  color: #9f9f9f;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: default;
+  margin: 2px 0;
 }
 
+/* Link styling within projects */
 .project-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .project-link {
-    color: #FF4545;
-    margin-top: 10px;
+  color: #FF4545;
+  margin-top: 10px;
 }
 
 .project-link svg {
-    fill: #FF4545; /* This sets the fill color for SVG icons */
+  fill: #FF4545; /* Fill color for SVG icons */
 }
-
 
 .project-link:hover {
-    text-decoration: none;
+  text-decoration: none; /* No underline on hover */
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for mobile view */
 @media (max-width: 720px) {
-    .home-container,
-    .about-container,
-    .experience-container,
-    .projects-container {
-      padding: 0 15px;
-    }
-  
-    .typography-h1 {
-      font-size: 1.8rem;
-    }
-  
-    .typography-h2,
-    .typography-body1,
-    .experience-item,
-    .project-description {
-      font-size: 1rem;
-    }
-  
-    .tech-stack {
-      grid-template-columns: 1fr;
-    }
-  
-    .project-card {
-      width: 100%;
-    }
-  
-  
+  .projects-container {
+    padding: 0 15px; /* Adjust padding for mobile */
+    padding-left: 0; /* Remove left padding for mobile */
   }
+
+  .project-card {
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+  }
+
+  .project-description,
+  .tech-chip {
+    font-size: 0.9rem; /* Adjust font size for readability */
+  }
+}
+
+/* Additional adjustments for iPhone 14 Pro Max in portrait mode */
+@media (max-width: 1284px) {
+  .project-description,
+  .tech-chip {
+    font-size: 1.1rem; /* Slightly larger font size */
+  }
+}

@@ -1,12 +1,14 @@
 import React from 'react';
-import { Box, List, ListItem, ListItemText, IconButton } from '@mui/material';
+import { Box, List, ListItem, ListItemText, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 
 const SidebarNav = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const colors = {
-    // background: '#000000', // Removed this line to inherit the background color
     icons: '#FF4545',
     text: '#FF4545'
   };
@@ -24,18 +26,22 @@ const SidebarNav = () => {
     </IconButton>
   );
 
+  // Hide sidebar on mobile screens
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <Box
       sx={{
-        width: 200, // Adjusted width to give more space for the text
+        width: 200,
         position: 'fixed',
         bottom: 100,
         right: 0,
-        // bgcolor: colors.background, // Removed this line
         zIndex: 1200,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-end', // Align items to the right
+        alignItems: 'flex-end',
         padding: 2,
       }}
     >
@@ -46,7 +52,7 @@ const SidebarNav = () => {
             key={item.text}
             component="a"
             href={item.href}
-            sx={{ color: colors.text, padding: 0, display: 'flex', justifyContent: 'flex-end' }} // Right-align the text
+            sx={{ color: colors.text, padding: 0, display: 'flex', justifyContent: 'flex-end' }}
           >
             <ListItemText primary={`/${item.text.toLowerCase()}`} sx={{ textAlign: 'right', minWidth: 'fit-content' }} />
           </ListItem>

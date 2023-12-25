@@ -1,14 +1,27 @@
+/* credits.css */
+
+/* Container for the credits section */
 #credits {
-    display: flex;
-    align-items: center;
-    padding-top: 100px;
-  }
-  
+  display: flex;
+  align-items: center;
+  padding-top: 100px; /* Top padding */
+}
+
+/* Styles for the ending credits text */
+.ending-credits {
+  font-family: "NTR", sans-serif; /* Specified font family */
+  color: var(--slate); /* Color from CSS variable */
+  text-align: center; /* Centered text */
+  width: 100%; /* Full width */
+  font-size: 16px; /* Font size */
+  padding-bottom: 40px; /* Bottom padding */
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 600px) {
   .ending-credits {
-    font-family: "NTR", sans-serif;
-    color: var(--slate);
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-    padding-bottom: 40px;
+    font-size: 14px; /* Smaller font size for mobile */
+    padding-top: 50px; /* Less padding on top for mobile */
+    padding-bottom: 20px; /* Less padding on bottom for mobile */
   }
+}

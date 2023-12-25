@@ -1,73 +1,83 @@
 /* Experience.css */
+
+/* Container styles */
 .experience-container {
-    display: flex;
-    color: #FFFFFF;
-    padding-top: 20px;
-    padding-left: 0px; /* Adjusted to match the rest of the page */
-    padding-right: 200px;
-    position: relative; /* Set position relative for absolute child positioning */
-  }
-  
-  .experience-selector {
-    position: absolute; /* Absolute positioning to prevent shifting */
-    left: 200px; /* Align to the padding of the container */
-    top: 50px; /* Align with the top of the experience details */
-    width: 250px; /* Set a fixed width to accommodate the longest shortName */
-    text-align: left;
-  }
-  
-  .company-name {
-    cursor: pointer;
-    margin-bottom: 15px;
-    transition: color 0.3s;
-  }
-  
-  .company-name.active {
-    color: #FF4545; /* Highlight color for selected company */
-    font-weight: bold;
-  }
-  
-  .line {
-    position: absolute;
-    left: 450px; /* Position the line to the right of the company names */
-    top: 50px; /* Start at the same place as the selector */
-    height: 500px; /* Fixed height */
-    width: 2px;
-    background-color: #FF4545; /* Line color */
-  }
-  
-  .experience-details {
-    flex-grow: 1;
-    margin-left: 300px; /* Adjust this to prevent overlap with the selector */
-    padding-left: 20px;
-    padding-right: 20px;
-    border-left: 2px solid #FF4545;
-  } 
-  
-  .experience-title, .experience-company, .experience-duration {
-    text-align: left;
-  }
-  
-  .experience-responsibilities {
-    padding-left: 0px; /* Adjust this value so the text aligns with the header text */
-  }
-  
-  .experience-item {
-    display: flex;
-    align-items: flex-start; /* Align the items to the start of the flex container */
-    font-size: 16px;
-    word-wrap: break-word;
-    max-width: 600px;
+  display: flex;
+  color: #FFFFFF;
+  padding-top: 20px;
+  padding-left: 0; /* Consistent with other sections */
+  padding-right: 200px;
+  position: relative; /* For absolute child positioning */
+}
+
+/* Experience selector styles */
+.experience-selector {
+  position: absolute;
+  left: 200px; /* Align with container padding */
+  top: 50px; /* Top alignment */
+  width: 250px; /* Fixed width */
+  text-align: left;
+}
+
+/* Company name styles */
+.company-name {
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.company-name.active {
+  color: #FF4545; /* Highlight color for active company */
+  font-weight: bold;
+}
+
+/* Decorative line styles */
+.line {
+  position: absolute;
+  left: 450px; /* Right of company names */
+  top: 50px; /* Top alignment */
+  height: 500px; /* Fixed height */
+  width: 2px;
+  background-color: #FF4545; /* Line color */
+}
+
+/* Experience details styles */
+.experience-details {
+  flex-grow: 1;
+  margin-left: 300px; /* Prevent overlap with selector */
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left: 2px solid #FF4545;
+}
+
+/* Text alignment for experience details */
+.experience-title,
+.experience-company,
+.experience-duration {
+  text-align: left;
+}
+
+.experience-responsibilities {
+  padding-left: 0; /* Align text with header */
+}
+
+/* Experience item styles */
+.experience-item {
+  display: flex;
+  align-items: flex-start; /* Start alignment */
+  font-size: 16px;
+  word-wrap: break-word;
+  max-width: 600px;
 }
 
 .experience-item::before {
-    content: '►';
-    color: #FF4545;
-    margin-right: 10px;
-    font-size: 20px;
-    /* Remove top positioning if not needed */
+  content: '►';
+  color: #FF4545;
+  margin-right: 10px;
+  font-size: 20px;
 }
 
+/* Title header styles */
 .title-header {
   display: flex;
   justify-content: space-between;
@@ -76,34 +86,39 @@
   padding-left: 200px;
 }
 
-  
-/* Responsive adjustments */
+/* Responsive adjustments for mobile view */
 @media (max-width: 720px) {
-  .home-container,
-  .about-container,
-  .experience-container,
-  .projects-container {
-    padding: 0 15px;
+  .experience-container {
+    padding: 0 15px; /* Adjust padding for mobile */
   }
 
-  .typography-h1 {
-    font-size: 1.8rem;
+  .experience-selector {
+    position: static; /* Remove absolute positioning */
+    width: auto; /* Adjust width for mobile */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
   }
 
-  .typography-h2,
-  .typography-body1,
-  .experience-item,
-  .project-description {
-    font-size: 1rem;
+  .line {
+    display: none; /* Hide line on mobile */
   }
 
-  .tech-stack {
-    grid-template-columns: 1fr;
+  .experience-details {
+    margin-left: 0; /* Remove margin for mobile */
+    padding: 10px 0; /* Adjust padding */
   }
 
-  .project-card {
-    width: 100%;
+  .experience-item {
+    font-size: 0.9rem; /* Smaller font size for mobile */
   }
 
+  .title-header {
+    padding-left: 0; /* Remove padding for mobile */
+  }
+}
 
+/* Additional adjustments for iPhone 14 Pro Max in portrait mode */
+@media (max-width: 1284px) {
+  .experience-item {
+    font-size: 1.1rem; /* Slightly larger font size */
+  }
 }

@@ -9,7 +9,6 @@ const Home = () => {
       <Typography variant="h1" className="typography-h1">
         Hi, I'm <span className="david-text"><TypingEffect text="David" /></span>
       </Typography>
-      <Typography variant="h4" className="typography-h2">I make stuff</Typography>
     </Box>
   );
 };

@@ -1,80 +1,78 @@
 /* About.css */
+
+/* General container styles */
 .about-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Aligns items to the left, similar to Home.js */
-  padding-top: 0; /* Remove padding at the top if there's any */
+  align-items: flex-start; /* Aligns items to the left */
   height: auto;
-  padding-left: 200px; /* Adjust padding to match Home.js */
+  padding-top: 0; /* No top padding */
+  padding-left: 200px; /* Consistent with Home.js */
 }
 
-/* Apply your specific text styles here */
+/* Typography and text styling */
 .typography-body1 {
-  font-size: 22px; /* Your specified font size */
-  max-width: 40%; /* Maximum width of the text container */
-  text-align: left; /* Justified text alignment */
-  padding-bottom: 5px; /* Space at the bottom */
-  color: #FFFFFF; /* Adjust text color as needed */
-  /* Add other styles like font-family or weight as needed */
+  font-size: 22px; /* Specified font size */
+  max-width: 40%; /* Max width for text container */
+  text-align: left; /* Left-aligned text */
+  padding-bottom: 5px; /* Bottom padding */
+  color: #FFFFFF; /* Text color */
+  /* Additional styles like font-family, weight, etc. */
 }
 
-/* Responsive adjustments */
-/* Responsive adjustments */
-@media (max-width: 720px) {
-  .home-container,
-  .about-container,
-  .experience-container,
-  .projects-container {
-    padding: 0 15px;
-  }
-
-  .typography-h1 {
-    font-size: 1.8rem;
-  }
-
-  .typography-h2,
-  .typography-body1,
-  .experience-item,
-  .project-description {
-    font-size: 1rem;
-  }
-
-  .tech-stack {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-
-}
-
+/* Tech stack styles */
 .tech-stack {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates a two-column grid */
-  gap: 10px; /* Adjust the gap between items as necessary */
-  list-style: none; /* Removes default list styling */
-  padding: 0; /* Removes default padding */
-  color: #FFFFFF; /* Sets the text color */
+  grid-template-columns: repeat(2, 1fr); /* Two-column grid */
+  gap: 10px; /* Gap between items */
+  list-style: none; /* No default list styling */
+  padding: 0; /* No default padding */
+  color: #FFFFFF; /* Text color */
 }
 
 .tech-item {
   display: flex;
-  align-items: center; /* Centers the bullet with the text */
-  font-size: 1rem; /* Adjust the font size as necessary */
+  align-items: center; /* Center bullet with text */
+  font-size: 1rem; /* Font size */
 }
 
 .tech-item::before {
-  content: '►'; /* Adds a custom bullet */
-  color: #FF4545; /* Adjust the color of the bullet */
-  margin-right: 10px; /* Adjust space between the bullet and text */
-  /* Any other styles for the bullet */
+  content: '►'; /* Custom bullet */
+  color: #FF4545; /* Bullet color */
+  margin-right: 10px; /* Space between bullet and text */
 }
+
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 720px) {
+  .about-container {
+    padding: 0 15px; /* Adjust padding for mobile */
+  }
+
+  .typography-body1 {
+    font-size: 1rem; /* Smaller font size for iPhone 14 */
+    max-width: 100%; /* Full width for mobile */
+  }
+
+  .tech-stack {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+
+  .project-card {
+    width: 100%; /* Full width for mobile */
+  }
+}
+
+/* Additional adjustments for iPhone 14 Pro Max in portrait mode */
+@media (max-width: 1284px) {
+  .typography-body1 {
+    font-size: 1.2rem; /* Adjust font size for larger screen */
+  }
 }
