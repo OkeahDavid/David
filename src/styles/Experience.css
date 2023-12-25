@@ -87,7 +87,7 @@
 }
 
 /* Responsive adjustments for mobile view */
-@media (max-width: 720px) {
+@media (max-width: 600px) {
   .experience-container {
     padding: 0 15px; /* Adjust padding for mobile */
   }
@@ -112,12 +112,12 @@
   }
 
   .title-header {
-    padding-left: 0; /* Remove padding for mobile */
+    padding-left: 20px; /* Remove padding for mobile */
   }
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */
-@media (max-width: 1284px) {
+@media (max-width: 720px) {
   .experience-item {
     font-size: 1.1rem; /* Slightly larger font size */
   }

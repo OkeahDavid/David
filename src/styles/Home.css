@@ -24,7 +24,7 @@
 }
 
 /* Responsive adjustments for mobile view */
-@media (max-width: 720px) {
+@media (max-width: 600px) {
   .home-container,
   .about-container,
   .experience-container,
@@ -53,7 +53,7 @@
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */
-@media (max-width: 1284px) {
+@media (max-width: 720px) {
   /* Adjust styles as needed for larger screen sizes */
   .typography-h1 {
     font-size: 2rem; /* Slightly larger font size */

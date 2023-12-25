@@ -22,7 +22,7 @@ const About = () => {
         development, artificial intelligence, computer vision, and everything in between.
       </Typography>
 
-      <Typography variant="h6" style={{ marginTop: '20px' }}>
+      <Typography variant="body1" className="typography-body1">
         Here are some technologies I work with:
       </Typography>
 
@@ -33,7 +33,7 @@ const About = () => {
           </Typography>
         ))}
       </Box>
-      <Typography variant="h6" style={{ marginTop: '0px' }}>
+      <Typography variant="body1" className="typography-body1">
         Outside of work I'm interested in games, anime, and football.
       </Typography>
     </Box>

@@ -6,7 +6,7 @@ import GithubIcon from '@mui/icons-material/GitHub';
 
 const SidebarNav = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('md'));
 
   const colors = {
     icons: '#FF4545',
@@ -27,7 +27,7 @@ const SidebarNav = () => {
   );
 
   // Hide sidebar on mobile screens
-  if (isMobile) {
+  if (isMobileOrTablet) {
     return null;
   }
 

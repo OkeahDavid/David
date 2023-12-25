@@ -1,16 +1,26 @@
 /* projects.css */
 
+/* projects.css */
+
 /* Container styles for the projects section */
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  padding-left: 200px; /* Adjust this to match experience-container */
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 20px;
-  padding-left: 180px; /* Adjust for sidebar */
 }
+
+.projects-header {
+  text-align: left;
+  width: 100%;
+  padding-left: 0; /* Adjust this to match title-header in experience.css */
+  margin-bottom: 20px;
+}
+
 
 /* Styles for individual project cards */
 .project-card {
@@ -100,19 +110,46 @@
 /* Responsive adjustments for mobile view */
 @media (max-width: 720px) {
   .projects-container {
-    padding: 0 15px; /* Adjust padding for mobile */
-    padding-left: 0; /* Remove left padding for mobile */
+    max-width: 100%; /* Full width */
+    margin: 0; /* No margins */
+    padding: 0; /* No padding */
+    gap: 20px; /* Maintain gap between project cards if needed */
+  }
+
+  .projects-header {
+    text-align: left;
+    width: 100%;
+    padding: 0; /* No padding */
+    margin-bottom: 20px; /* Keep some margin bottom for spacing */
   }
 
   .project-card {
     width: 100%; /* Full width for mobile */
     margin-bottom: 20px; /* Add bottom margin for spacing */
+    padding: 10px; /* Reduced padding inside the card */
+    box-sizing: border-box; /* Include padding and border in the width */
   }
 
-  .project-description,
-  .tech-chip {
-    font-size: 0.9rem; /* Adjust font size for readability */
+  .project-title,
+  .project-description {
+    margin: 5px 0; /* Reduced margin */
+    font-size: 0.8rem; /* Smaller font size for readability */
   }
+
+  .tech-stacks {
+    gap: 5px; /* Smaller gap between tech chips */
+  }
+
+  .tech-chip {
+    padding: 1px 2px; /* Smaller padding inside tech chips */
+    font-size: 0.7rem; /* Smaller font size for tech chips */
+  }
+
+  .icons-container svg {
+    width: 16px; /* Smaller icons */
+    height: 16px; /* Smaller icons */
+  }
+
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */

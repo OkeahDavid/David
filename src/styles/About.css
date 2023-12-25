@@ -59,6 +59,9 @@
   .typography-body1 {
     font-size: 1rem; /* Smaller font size for iPhone 14 */
     max-width: 100%; /* Full width for mobile */
+    text-align: left; /* Left-aligned text */
+    padding-bottom: 5px; /* Bottom padding */
+    color: #FFFFFF; /* Text color */
   }
 
   .tech-stack {
