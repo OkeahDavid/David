@@ -5,8 +5,18 @@ import '../styles/Experience.css';
 const Experience = () => {
   const experiences = [
     {
+      shortName: "Airbus", // Add short name
+      title: "Software Engineer",
+      company: "Airbus",
+      duration: "March 2024 - Present",
+      responsibilities: [
+        "Part of the Engineering Support team",
+        "Responsible for Model-Based Methods and tools in the area of electronics in the cabin.",
+      ],
+    },
+    {
       shortName: "Intenta", // Add short name
-      title: "Software Developer",
+      title: "Software Engineer",
       company: "Intenta Holding GmbH",
       duration: "January 2023 - December 2023",
       responsibilities: [
