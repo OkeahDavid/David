@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane, faCar, faHome } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Experience.css';
 
 const Experience = () => {
@@ -9,6 +11,7 @@ const Experience = () => {
       title: "Software Engineer",
       company: "Airbus",
       duration: "March 2024 - Present",
+      icon: faPlane,
       responsibilities: [
         "Part of the Engineering Support team",
         "Responsible for Model-Based Methods and tools in the area of electronics in the cabin.",
@@ -19,6 +22,7 @@ const Experience = () => {
       title: "Software Engineer",
       company: "Intenta Holding GmbH",
       duration: "January 2023 - December 2023",
+      icon: faCar,
       responsibilities: [
         "Developed and maintained data analysis pipelines using Python, Pandas and PySpark",
         "Executed the design, implementation, and processing of software modules used in the field of autonomous driving",
@@ -30,6 +34,7 @@ const Experience = () => {
       title: "Data Analyst",
       company: "Orbus Health Marketing and Global",
       duration: "September 2020 - September 2021",
+      icon: faHome,
       responsibilities: [
         "Utilized advanced database tools and techniques to streamline data processes",
         "Conducted comprehensive statistical analysis on customer data",
@@ -68,9 +73,10 @@ const Experience = () => {
             <Typography variant="subtitle1" className="experience-company">@ {experiences[selectedExpIndex].company}</Typography>
             <Typography variant="subtitle2" className="experience-duration">{experiences[selectedExpIndex].duration}</Typography>
           </Box>
-          <List className={`experience-responsibilities ${experiences[selectedExpIndex].shortName.toLowerCase()}`}>
+          <List className="experience-responsibilities">
             {experiences[selectedExpIndex].responsibilities.map((item, idx) => (
               <ListItem key={idx} className="experience-item">
+                <FontAwesomeIcon icon={experiences[selectedExpIndex].icon} className="item-icon" />
                 <ListItemText primary={item} />
               </ListItem>
             ))}
