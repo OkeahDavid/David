@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
-import '../styles/Projects.css';
 import TwitterIcon from '@mui/icons-material/Twitter';
-
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import '../styles/Projects.css';
 
 const projectData = [
   {
@@ -33,6 +35,7 @@ const projectData = [
     tech: ["Node.js", "Three.js", "HTML"],
     github: "https://github.com/OkeahDavid/Earth",
     link: "https://lambent-arithmetic-f05abd.netlify.app/",
+    preview: true,
   },
   {
     title: "CIFAR-10 CNN Classifier",
@@ -44,8 +47,13 @@ const projectData = [
   },
   // More projects...
 ];
-
 const Projects = () => {
+  const [previewOpen, setPreviewOpen] = useState({});
+
+  const togglePreview = (index) => {
+    setPreviewOpen(prev => ({...prev, [index]: !prev[index]}));
+  };
+
   return (
     <Box id="projects" className="projects-container">
       <Typography variant="h4" gutterBottom className="projects-header">
@@ -66,6 +74,11 @@ const Projects = () => {
                   {project.link.includes('twitter.com') ? <TwitterIcon /> : <LanguageIcon />}
                 </IconButton>
               )}
+              {project.preview && (
+                <IconButton onClick={() => togglePreview(index)} className="project-link">
+                  {previewOpen[index] ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                </IconButton>
+              )}
             </Box>
           </Box>
           {project.description && project.description.map((point, idx) => (
@@ -76,6 +89,19 @@ const Projects = () => {
               <Box key={idx} className="tech-chip">{tech}</Box>
             ))}
           </Box>
+          {project.preview && previewOpen[index] && (
+            <Box className="preview-container">
+              <iframe src={project.link} title="Project Preview" className="preview-iframe" />
+              <IconButton 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener" 
+                className="full-view-button"
+              >
+                <OpenInNewIcon />
+              </IconButton>
+            </Box>
+          )}
         </Box>
       ))}
     </Box>
