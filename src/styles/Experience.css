@@ -5,17 +5,17 @@
   display: flex;
   color: #FFFFFF;
   padding-top: 20px;
-  padding-left: 0; /* Consistent with other sections */
+  padding-left: 0;
   padding-right: 200px;
-  position: relative; /* For absolute child positioning */
+  position: relative;
 }
 
 /* Experience selector styles */
 .experience-selector {
   position: absolute;
-  left: 200px; /* Align with container padding */
-  top: 50px; /* Top alignment */
-  width: 250px; /* Fixed width */
+  left: 200px;
+  top: 50px;
+  width: 250px;
   text-align: left;
 }
 
@@ -27,24 +27,14 @@
 }
 
 .company-name.active {
-  color: #FF4545; /* Highlight color for active company */
+  color: #FF4545;
   font-weight: bold;
-}
-
-/* Decorative line styles */
-.line {
-  position: absolute;
-  left: 450px; /* Right of company names */
-  top: 50px; /* Top alignment */
-  height: 500px; /* Fixed height */
-  width: 2px;
-  background-color: #FF4545; /* Line color */
 }
 
 /* Experience details styles */
 .experience-details {
   flex-grow: 1;
-  margin-left: 300px; /* Prevent overlap with selector */
+  margin-left: 300px;
   padding-left: 20px;
   padding-right: 20px;
   border-left: 2px solid #FF4545;
@@ -58,13 +48,13 @@
 }
 
 .experience-responsibilities {
-  padding-left: 0; /* Align text with header */
+  padding-left: 0;
 }
 
 /* Experience item styles */
 .experience-item {
   display: flex;
-  align-items: flex-start; /* Start alignment */
+  align-items: flex-start;
   font-size: 16px;
   word-wrap: break-word;
   max-width: 600px;
@@ -74,7 +64,29 @@
   content: '►';
   color: #FF4545;
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 12px;
+}
+
+/* Custom bullet points for each company */
+/* Custom bullet points for each company */
+.airbus .experience-item::before {
+  content: '✈️'; /* Plane emoji */
+  font-size: 16px;
+}
+
+.intenta .experience-item::before {
+  content: '🚗'; /* Car emoji */
+  font-size: 16px;
+}
+
+.orbus .experience-item::before {
+  content: '🏠'; /* House emoji */
+  font-size: 16px;
+}
+
+/* Remove the general triangle bullet point */
+.experience-item::before {
+  content: none;
 }
 
 /* Title header styles */
@@ -89,36 +101,32 @@
 /* Responsive adjustments for mobile view */
 @media (max-width: 600px) {
   .experience-container {
-    padding: 0 15px; /* Adjust padding for mobile */
+    padding: 0 15px;
   }
 
   .experience-selector {
-    position: static; /* Remove absolute positioning */
-    width: auto; /* Adjust width for mobile */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-  }
-
-  .line {
-    display: none; /* Hide line on mobile */
+    position: static;
+    width: auto;
+    margin-bottom: 20px;
   }
 
   .experience-details {
-    margin-left: 0; /* Remove margin for mobile */
-    padding: 10px 0; /* Adjust padding */
+    margin-left: 0;
+    padding: 10px 0;
   }
 
   .experience-item {
-    font-size: 0.9rem; /* Smaller font size for mobile */
+    font-size: 0.9rem;
   }
 
   .title-header {
-    padding-left: 20px; /* Remove padding for mobile */
+    padding-left: 20px;
   }
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */
 @media (max-width: 720px) {
   .experience-item {
-    font-size: 1.1rem; /* Slightly larger font size */
+    font-size: 1.1rem;
   }
 }

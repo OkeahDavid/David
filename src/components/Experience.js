@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Typography, List, ListItem, ListItemText} from '@mui/material';
+import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 import '../styles/Experience.css';
 
 const Experience = () => {
   const experiences = [
     {
-      shortName: "Airbus", // Add short name
+      shortName: "Airbus",
       title: "Software Engineer",
       company: "Airbus",
       duration: "March 2024 - Present",
@@ -15,7 +15,7 @@ const Experience = () => {
       ],
     },
     {
-      shortName: "Intenta", // Add short name
+      shortName: "Intenta",
       title: "Software Engineer",
       company: "Intenta Holding GmbH",
       duration: "January 2023 - December 2023",
@@ -23,7 +23,6 @@ const Experience = () => {
         "Developed and maintained data analysis pipelines using Python, Pandas and PySpark",
         "Executed the design, implementation, and processing of software modules used in the field of autonomous driving",
         "Created and maintained comprehensive documentation for scripts, generating reports and KPIS that assisted in task management and aiding overall communication."
-        // ... more responsibilities
       ],
     },
     {
@@ -35,16 +34,12 @@ const Experience = () => {
         "Utilized advanced database tools and techniques to streamline data processes",
         "Conducted comprehensive statistical analysis on customer data",
         "Analyzed customer data leading to a marketing strategy that increased customer engagement and sales by 20%."
-        // ... more responsibilities
       ],
     },
-    // ... more experiences
   ];
 
-  // State to track the selected experience
   const [selectedExpIndex, setSelectedExpIndex] = useState(0);
 
-  // Handler for setting the selected experience
   const handleExperienceSelect = (index) => {
     setSelectedExpIndex(index);
   };
@@ -55,12 +50,13 @@ const Experience = () => {
         / experience
       </Typography>
 
-      <Box  className="experience-container">
+      <Box className="experience-container">
         <Box className="experience-selector">
           {experiences.map((exp, index) => (
-            <Typography key={index} 
-                        className={`company-name ${index === selectedExpIndex ? 'active' : ''}`}
-                        onClick={() => handleExperienceSelect(index)}
+            <Typography 
+              key={index} 
+              className={`company-name ${index === selectedExpIndex ? 'active' : ''}`}
+              onClick={() => handleExperienceSelect(index)}
             >
               {exp.shortName}
             </Typography>
@@ -72,7 +68,7 @@ const Experience = () => {
             <Typography variant="subtitle1" className="experience-company">@ {experiences[selectedExpIndex].company}</Typography>
             <Typography variant="subtitle2" className="experience-duration">{experiences[selectedExpIndex].duration}</Typography>
           </Box>
-          <List className="experience-responsibilities">
+          <List className={`experience-responsibilities ${experiences[selectedExpIndex].shortName.toLowerCase()}`}>
             {experiences[selectedExpIndex].responsibilities.map((item, idx) => (
               <ListItem key={idx} className="experience-item">
                 <ListItemText primary={item} />
