@@ -2,28 +2,81 @@
 
 /* General styles */
 .home-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  min-height: auto; /* Allows content to expand */
+  min-height: auto;
   padding-top: 25vh;
   padding-left: 200px;
+  padding-right: 200px;
   padding-bottom: 0;
 }
 
 .david-text {
-  color: #FF4545; /* Sets the text color */
+  color: #FF4545;
 }
 
 /* Typography styles */
 .typography-h1 {
   margin: 0;
-  font-size: 6rem; /* Adjust font size as needed */
-  font-weight: bold; /* Adjust font weight as needed */
+  font-size: 6rem;
+  font-weight: bold;
 }
 
-/* Responsive adjustments for mobile view */
+/* Profile image styles */
+.profile-image {
+  position: absolute;
+  right: 20%;
+  top: 25vh;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.profile-image.spinning {
+  animation: spin 1s linear 1; /* Changed to play only once */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .profile-image {
+    right: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .profile-image {
+    position: static;
+    display: block;
+    margin: 20px auto;
+    top: auto;
+    right: auto;
+  }
+
+  .typography-h1 {
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 600px) {
   .home-container,
   .about-container,
@@ -33,29 +86,33 @@
   }
 
   .typography-h1 {
-    font-size: 1.5rem; /* Smaller font size for iPhone 14 */
+    font-size: 1.5rem;
   }
 
   .typography-body1,
   .experience-item,
   .project-description {
-    font-size: 0.9rem; /* Slightly smaller font size for better readability */
+    font-size: 0.9rem;
   }
 
   .tech-stack {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid for tech stack */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 
   .project-card {
-    width: 100%; /* Full width for mobile */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
   }
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */
 @media (max-width: 720px) {
-  /* Adjust styles as needed for larger screen sizes */
   .typography-h1 {
-    font-size: 2rem; /* Slightly larger font size */
+    font-size: 2rem;
   }
 }

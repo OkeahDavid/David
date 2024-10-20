@@ -1,16 +1,17 @@
 import React from 'react';
-import { Box, List, ListItem, ListItemText, IconButton, useTheme, useMediaQuery } from '@mui/material';
+import { AppBar, Toolbar, Box, List, ListItem, ListItemText, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 
-const SidebarNav = () => {
+const TopNav = () => {
   const theme = useTheme();
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('md'));
 
   const colors = {
     icons: '#FF4545',
-    text: '#FF4545'
+    text: '#FF4545',
+    background: '#000000'
   };
 
   const menuItems = [
@@ -26,45 +27,45 @@ const SidebarNav = () => {
     </IconButton>
   );
 
-  // Hide sidebar on mobile screens
+  // Hide navigation on mobile screens
   if (isMobileOrTablet) {
     return null;
   }
 
   return (
-    <Box
-      sx={{
-        width: 200,
-        position: 'fixed',
-        bottom: 100,
+    <AppBar 
+      position="fixed" 
+      sx={{ 
+        background: colors.background, 
+        boxShadow: 'none',
+        zIndex: (theme) => theme.zIndex.drawer + 1, // Ensures it's always on top
+        top: 0,
+        left: 0,
         right: 0,
-        zIndex: 1200,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-end',
-        padding: 2,
       }}
     >
-      <List sx={{ width: '100%' }}>
-        {menuItems.map((item, index) => (
-          <ListItem
-            button
-            key={item.text}
-            component="a"
-            href={item.href}
-            sx={{ color: colors.text, padding: 0, display: 'flex', justifyContent: 'flex-end' }}
-          >
-            <ListItemText primary={`/${item.text.toLowerCase()}`} sx={{ textAlign: 'right', minWidth: 'fit-content' }} />
-          </ListItem>
-        ))}
-      </List>
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: '0px' }}>
-        {renderIconButton(EmailIcon, 'mailto:okeahdavid@gmail.com', 'Email')}
-        {renderIconButton(LinkedInIcon, 'https://www.linkedin.com/in/david-okeah', 'LinkedIn')}
-        {renderIconButton(GithubIcon, 'https://github.com/OkeahDavid', 'GitHub')}
-      </Box>
-    </Box>
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <List sx={{ display: 'flex' }}>
+          {menuItems.map((item) => (
+            <ListItem
+              button
+              key={item.text}
+              component="a"
+              href={item.href}
+              sx={{ color: colors.text, padding: '0 10px' }}
+            >
+              <ListItemText primary={`/${item.text.toLowerCase()}`} />
+            </ListItem>
+          ))}
+        </List>
+        <Box sx={{ display: 'flex', gap: '10px' }}>
+          {renderIconButton(EmailIcon, 'mailto:okeahdavid@gmail.com', 'Email')}
+          {renderIconButton(LinkedInIcon, 'https://www.linkedin.com/in/david-okeah', 'LinkedIn')}
+          {renderIconButton(GithubIcon, 'https://github.com/OkeahDavid', 'GitHub')}
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 
-export default SidebarNav;
+export default TopNav;
