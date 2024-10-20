@@ -42,59 +42,49 @@
 
 @media (max-width: 768px) {
   .home-container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 5vh 5vw;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .profile-image {
     position: static;
-    display: block;
-    margin: 20px auto;
-    top: auto;
-    right: auto;
+    margin: 5vh auto;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
 
   .typography-h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-top: 3vh;
   }
 }
 
 @media (max-width: 600px) {
-  .home-container,
-  .about-container,
-  .experience-container,
-  .projects-container {
-    padding: 0 15px;
+  .home-container {
+    padding: 5vh 5vw;
   }
 
   .typography-h1 {
-    font-size: 1.5rem;
-  }
-
-  .typography-body1,
-  .experience-item,
-  .project-description {
-    font-size: 0.9rem;
-  }
-
-  .tech-stack {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-
-  .project-card {
-    width: 100%;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
 
   .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */
 @media (max-width: 720px) {
+  .home-container {
+    justify-content: center;
+  }
+
   .typography-h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }

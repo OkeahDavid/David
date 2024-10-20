@@ -5,42 +5,41 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Aligns items to the left */
+  align-items: flex-start;
   height: auto;
-  padding-top: 0; /* No top padding */
-  padding-left: 200px; /* Consistent with Home.js */
+  padding-top: 0;
+  padding-left: 200px;
 }
 
 /* Typography and text styling */
 .typography-body1 {
-  font-size: 22px; /* Specified font size */
-  max-width: 40%; /* Max width for text container */
-  text-align: left; /* Left-aligned text */
-  padding-bottom: 5px; /* Bottom padding */
-  color: #FFFFFF; /* Text color */
-  /* Additional styles like font-family, weight, etc. */
+  font-size: 22px;
+  max-width: 40%;
+  text-align: left;
+  padding-bottom: 5px;
+  color: #FFFFFF;
 }
 
 /* Tech stack styles */
 .tech-stack {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two-column grid */
-  gap: 10px; /* Gap between items */
-  list-style: none; /* No default list styling */
-  padding: 0; /* No default padding */
-  color: #FFFFFF; /* Text color */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  color: #FFFFFF;
 }
 
 .tech-item {
   display: flex;
-  align-items: center; /* Center bullet with text */
-  font-size: 1rem; /* Font size */
+  align-items: center;
+  font-size: 1rem;
 }
 
 .tech-item::before {
-  content: '►'; /* Custom bullet */
-  color: #FF4545; /* Bullet color */
-  margin-right: 10px; /* Space between bullet and text */
+  content: '►';
+  color: #FF4545;
+  margin-right: 10px;
 }
 
 .project-header {
@@ -51,31 +50,50 @@
 }
 
 /* Responsive adjustments for mobile view */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .about-container {
-    padding: 0 15px; /* Adjust padding for mobile */
+    padding: 5vh 5vw;
+    align-items: center;
   }
 
   .typography-body1 {
-    font-size: 1rem; /* Smaller font size for iPhone 14 */
-    max-width: 100%; /* Full width for mobile */
-    text-align: left; /* Left-aligned text */
-    padding-bottom: 5px; /* Bottom padding */
-    color: #FFFFFF; /* Text color */
+    font-size: 1rem;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 3vh;
   }
 
   .tech-stack {
-    grid-template-columns: 1fr; /* Single column layout for mobile */
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tech-item {
+    font-size: 0.9rem;
   }
 
   .project-card {
-    width: 100%; /* Full width for mobile */
+    width: 100%;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 /* Additional adjustments for iPhone 14 Pro Max in portrait mode */
-@media (max-width: 1284px) {
+@media (max-width: 430px) {
   .typography-body1 {
-    font-size: 1.2rem; /* Adjust font size for larger screen */
+    font-size: 0.9rem;
+  }
+
+  .tech-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-item {
+    font-size: 0.8rem;
   }
 }

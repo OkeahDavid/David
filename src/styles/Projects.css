@@ -1,13 +1,11 @@
 /* projects.css */
 
-/* projects.css */
-
 /* Container styles for the projects section */
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  padding-left: 200px; /* Adjust this to match experience-container */
+  padding-left: 200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -17,10 +15,9 @@
 .projects-header {
   text-align: left;
   width: 100%;
-  padding-left: 0; /* Adjust this to match title-header in experience.css */
+  padding-left: 0;
   margin-bottom: 20px;
 }
-
 
 /* Styles for individual project cards */
 .project-card {
@@ -34,11 +31,11 @@
   flex-direction: column;
   justify-content: space-between;
   transition: 0.3s;
-  position: relative; /* For absolute positioning of child elements */
+  position: relative;
 }
 
 .project-card:hover {
-  transform: scale(1.05); /* Scale up on hover */
+  transform: scale(1.05);
 }
 
 /* Header styles within the project card */
@@ -100,14 +97,14 @@
 }
 
 .project-link svg {
-  fill: #FF4545; /* Fill color for SVG icons */
+  fill: #FF4545;
 }
 
 .project-link:hover {
-  text-decoration: none; /* No underline on hover */
+  text-decoration: none;
 }
-/* Added these new styles for the preview container */
 
+/* Preview container styles */
 .preview-container {
   width: 100%;
   height: 200px;
@@ -136,62 +133,65 @@
   background-color: rgba(255,255,255,0.9) !important;
 }
 
-
-/* Responsive adjustments */
-@media (max-width: 720px) {
-  .preview-container {
-    height: 150px;
-  }
-}
 /* Responsive adjustments for mobile view */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .projects-container {
-    max-width: 100%; /* Full width */
-    margin: 0; /* No margins */
-    padding: 0; /* No padding */
-    gap: 20px; /* Maintain gap between project cards if needed */
+    padding: 5vh 5vw;
+    justify-content: center;
   }
 
   .projects-header {
-    text-align: left;
-    width: 100%;
-    padding: 0; /* No padding */
-    margin-bottom: 20px; /* Keep some margin bottom for spacing */
+    text-align: center;
+    padding: 0;
   }
 
   .project-card {
-    width: 100%; /* Full width for mobile */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-    padding: 10px; /* Reduced padding inside the card */
-    box-sizing: border-box; /* Include padding and border in the width */
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 4vh;
   }
 
-  .project-title,
+  .project-title {
+    font-size: 1.2rem;
+  }
+
   .project-description {
-    margin: 5px 0; /* Reduced margin */
-    font-size: 0.8rem; /* Smaller font size for readability */
+    font-size: 0.9rem;
   }
 
   .tech-stacks {
-    gap: 5px; /* Smaller gap between tech chips */
+    justify-content: center;
   }
 
   .tech-chip {
-    padding: 1px 2px; /* Smaller padding inside tech chips */
-    font-size: 0.7rem; /* Smaller font size for tech chips */
+    font-size: 0.75rem;
   }
 
-  .icons-container svg {
-    width: 16px; /* Smaller icons */
-    height: 16px; /* Smaller icons */
+  .preview-container {
+    height: 180px;
   }
 
+  .full-view-button {
+    padding: 3px !important;
+  }
 }
 
-/* Additional adjustments for iPhone 14 Pro Max in portrait mode */
-@media (max-width: 1284px) {
-  .project-description,
+/* Additional adjustments for smaller screens */
+@media (max-width: 430px) {
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.8rem;
+  }
+
   .tech-chip {
-    font-size: 1.1rem; /* Slightly larger font size */
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .preview-container {
+    height: 150px;
   }
 }
