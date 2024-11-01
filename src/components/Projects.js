@@ -45,6 +45,15 @@ const projectData = [
     tech: ["Python", "Keras", "Tensorflow"],
     github: "https://github.com/OkeahDavid/CIFAR-10-CNN-Classifier",
   },
+  {
+    title: "Live Diaries",
+    description: [
+      "This is the landing page for the Live Diaries mobile app",
+    ],
+    tech: ["Next.js", "Typescript", "Tailwind CSS"],
+    github: "https://github.com/OkeahDavid/LiveDiaries",
+    link: "https://live-diaries.netlify.app/",
+  },
   // More projects...
 ];
 const Projects = () => {
