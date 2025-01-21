@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlane, faCar, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faPlane, faCar,faFlask  } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Experience.css';
 
 const Experience = () => {
   const experiences = [
     {
+      shortName: "Sasol",
+      title: "Software Engineer",
+      company: "Sasol",
+      duration: "January 2025 - Present",
+      icon: faFlask ,
+      responsibilities: [
+        "Developed full-stack solutions using ReactJS and Django, creating interactive dashboards and reports",
+      ],
+    },
+    {
       shortName: "Airbus",
       title: "Software Engineer",
       company: "Airbus",
-      duration: "March 2024 - Present",
+      duration: "March 2024 - November 2024",
       icon: faPlane,
       responsibilities: [
         "Part of the Engineering Support team",
@@ -29,6 +39,7 @@ const Experience = () => {
         "Created and maintained comprehensive documentation for scripts, generating reports and KPIS that assisted in task management and aiding overall communication."
       ],
     },
+    /*
     {
       shortName: "Orbus",
       title: "Data Analyst",
@@ -40,7 +51,7 @@ const Experience = () => {
         "Conducted comprehensive statistical analysis on customer data",
         "Analyzed customer data leading to a marketing strategy that increased customer engagement and sales by 20%."
       ],
-    },
+    },*/
   ];
 
   const [selectedExpIndex, setSelectedExpIndex] = useState(0);
