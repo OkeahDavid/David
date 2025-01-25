@@ -10,7 +10,7 @@ const Home = () => {
         Hi, I'm <span className="david-text"><TypingEffect text="David" /></span>
       </Typography>
       <img 
-        src="/profile_picture.jpeg" 
+        src="/profile_picture.jpg" 
         alt="David"
         className="profile-image"
       />
