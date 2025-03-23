@@ -14,19 +14,43 @@ const Analytics = () => {
         localStorage.setItem('metrics_session_id', sessionId);
       }
       
-      // Send pageview data
-      fetch('http://localhost:3000/api/track', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          projectApiKey: '155dbe305c18ac4ba5d33800be544c3a', // Replace with your actual API key
-          page: window.location.pathname,
-          referrer: document.referrer,
-          sessionId: sessionId,
-          userAgent: navigator.userAgent,
-          deviceType: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop'
+      // Get country information
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          // Send pageview data with country info
+          fetch('http://localhost:3000/api/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              projectApiKey: '155dbe305c18ac4ba5d33800be544c3a', // Your API key
+              page: window.location.pathname,
+              referrer: document.referrer,
+              sessionId: sessionId,
+              userAgent: navigator.userAgent,
+              deviceType: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+              country: data.country_name,
+              region: data.region,
+              city: data.city
+            })
+          }).catch(err => console.error('Analytics error:', err));
         })
-      }).catch(err => console.error('Analytics error:', err));
+        .catch(err => {
+          // Fall back to sending data without country info
+          console.error('Country detection error:', err);
+          fetch('http://localhost:3000/api/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              projectApiKey: '155dbe305c18ac4ba5d33800be544c3a', // Your API key
+              page: window.location.pathname,
+              referrer: document.referrer,
+              sessionId: sessionId,
+              userAgent: navigator.userAgent,
+              deviceType: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop'
+            })
+          }).catch(err => console.error('Analytics error:', err));
+        });
     };
 
     // Send analytics on page load and route changes
