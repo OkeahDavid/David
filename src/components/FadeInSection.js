@@ -1,35 +1,58 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import '../styles/Global.css';
 
-export default function FadeInSection(props) {
-  const [isVisible, setVisible] = React.useState(false);
-  const domRef = React.useRef();
+const FadeInSection = ({ children, direction = 'up', delay = 0, threshold = 0.3 }) => {
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
 
-  React.useEffect(() => {
-    const currentRef = domRef.current; // Copy domRef.current to a variable
+  useEffect(() => {
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setVisible(entry.isIntersecting);
-        }
-      });
-    });
+      // Only run the animation when element comes into view
+      if (entries[0].isIntersecting) {
+        setVisible(true);
+        observer.unobserve(domRef.current); // Stop observing once animation is triggered
+      }
+    }, { threshold });
+
+    const currentRef = domRef.current;
+
     if (currentRef) {
       observer.observe(currentRef);
     }
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
     };
-  }, []); // Dependencies array remains empty as we are not depending on any props or state
+  }, [threshold]);
+
+  // Determine animation class based on direction
+  const getAnimationClass = () => {
+    switch (direction) {
+      case 'left':
+        return 'fade-in-left';
+      case 'right':
+        return 'fade-in-right';
+      case 'down':
+        return 'fade-in-down';
+      case 'up':
+      default:
+        return 'fade-in-up';
+    }
+  };
 
   return (
     <div
-      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-      style={{ transitionDelay: `${props.delay}` }}
       ref={domRef}
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''} ${getAnimationClass()}`}
+      style={{ 
+        transitionDelay: `${delay}ms`,
+      }}
     >
-      {props.children}
+      {children}
     </div>
   );
-}
+};
+
+export default FadeInSection;

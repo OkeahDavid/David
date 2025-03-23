@@ -61,8 +61,8 @@ const Experience = () => {
   };
 
   return (
-    <>
-      <Typography id="experience" variant="h4" className="title-header">
+    <Box id="experience">
+      <Typography variant="h4" className="title-header">
         / experience
       </Typography>
 
@@ -94,7 +94,7 @@ const Experience = () => {
           </List>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

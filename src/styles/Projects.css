@@ -2,40 +2,92 @@
 
 /* Container styles for the projects section */
 .projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 100%;
+  padding: 40px 0;
   padding-left: 200px;
+  padding-right: 200px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 20px;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
 }
 
 .projects-header {
   text-align: left;
   width: 100%;
-  padding-left: 0;
   margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Project filters styling */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.category-chip {
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.category-chip:hover {
+  background-color: #444 !important;
+  transform: translateY(-2px);
+}
+
+.category-chip.active {
+  background-color: #FF4545 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+
+/* Grid layout for projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
 }
 
 /* Styles for individual project cards */
 .project-card {
   background-color: #333;
   color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 300px;
-  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  height: 100%;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
+.project-card.hovered {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Project thumbnail styling */
+.project-thumbnail {
+  height: 180px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+
+.fallback-icon {
+  font-size: 48px !important;
+  opacity: 0.5;
 }
 
 /* Header styles within the project card */
@@ -44,75 +96,107 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 15px 15px 5px;
 }
 
 .project-title {
   flex: 1;
   text-align: left;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
 }
 
 /* Icon container styles */
 .icons-container {
   display: flex;
-  gap: 8px;
+  gap: 2px;
 }
 
 /* Description styles for projects */
 .project-description {
-  font-size: 0.9rem;
-  margin: 10px 0;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  padding: 0 15px 10px;
   text-align: left;
+  color: #ddd;
 }
 
 /* Tech stack styling within projects */
 .tech-stacks {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  padding: 10px 15px;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .tech-chip {
-  background-color: #555;
-  color: #9f9f9f;
+  background-color: #444;
+  color: #fff; /* Improved contrast for accessibility */
   border-radius: 5px;
   padding: 5px 10px;
   font-size: 0.8rem;
   cursor: default;
-  margin: 2px 0;
+}
+
+/* Project action buttons */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  padding: 10px 15px 15px;
+  margin-top: auto;
+}
+
+.action-button {
+  border-radius: 6px !important;
+  text-transform: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.action-button:first-child {
+  border-color: #FF4545 !important;
+  color: #FF4545 !important;
+}
+
+.action-button:first-child:hover {
+  background-color: rgba(255, 69, 69, 0.1) !important;
+}
+
+.action-button:last-child {
+  background-color: #FF4545 !important;
+  color: white !important;
+}
+
+.action-button:last-child:hover {
+  background-color: #e03c3c !important;
 }
 
 /* Link styling within projects */
-.project-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
+.project-link {
+  color: #FF4545 !important;
+  padding: 5px !important;
+  transition: all 0.2s ease !important;
 }
 
-.project-link {
-  color: #FF4545;
-  margin-top: 10px;
+.project-link:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 69, 69, 0.1) !important;
 }
 
 .project-link svg {
   fill: #FF4545;
-}
-
-.project-link:hover {
-  text-decoration: none;
+  font-size: 20px !important;
 }
 
 /* Preview container styles */
 .preview-container {
   width: 100%;
   height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border-top: 1px solid #444;
   overflow: hidden;
   position: relative;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .preview-iframe {
@@ -123,75 +207,108 @@
 
 .full-view-button {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  background-color: rgba(255,255,255,0.7) !important;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(255, 255, 255, 0.8) !important;
   padding: 5px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
 }
 
 .full-view-button:hover {
-  background-color: rgba(255,255,255,0.9) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  transform: scale(1.1);
+}
+
+.full-view-button svg {
+  font-size: 18px !important;
+  color: #333 !important;
+}
+
+/* Loading animation for images */
+@keyframes loadingPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.6; }
+}
+
+.project-thumbnail.loading {
+  animation: loadingPulse 1.5s infinite;
+}
+
+/* Responsive adjustments for tablet view */
+@media (max-width: 960px) {
+  .projects-container {
+    padding: 30px 20px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
 }
 
 /* Responsive adjustments for mobile view */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 5vh 5vw;
-    justify-content: center;
+    padding: 20px 15px;
   }
 
   .projects-header {
     text-align: center;
-    padding: 0;
+  }
+  
+  .project-filters {
+    justify-content: center;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
   }
 
+  .project-thumbnail {
+    height: 160px;
+  }
+  
   .project-card {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 4vh;
+    max-width: 100%;
   }
 
   .project-title {
-    font-size: 1.2rem;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-  }
-
-  .tech-stacks {
-    justify-content: center;
-  }
-
-  .tech-chip {
-    font-size: 0.75rem;
-  }
-
-  .preview-container {
-    height: 180px;
-  }
-
-  .full-view-button {
-    padding: 3px !important;
+    font-size: 1.1rem !important;
   }
 }
 
 /* Additional adjustments for smaller screens */
 @media (max-width: 430px) {
-  .project-title {
-    font-size: 1.1rem;
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-thumbnail {
+    height: 140px;
+  }
+  
+  .tech-stacks {
+    justify-content: flex-start;
   }
 
-  .project-description {
-    font-size: 0.8rem;
+  .category-chip .MuiChip-label {
+    padding: 0 8px;
+    font-size: 0.75rem;
   }
-
-  .tech-chip {
-    font-size: 0.7rem;
-    padding: 3px 6px;
+  
+  .category-chip .MuiChip-icon {
+    font-size: 16px !important;
   }
-
-  .preview-container {
-    height: 150px;
+  
+  .project-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .action-button {
+    width: 100%;
   }
 }

@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Credits from "./components/Credits";
 import SidebarNav from './components/SidebarNav';
 import Analytics from './components/Analytics';
+import { Box } from "@mui/material";
 
 import "./App.css";
 
@@ -18,19 +19,36 @@ function App() {
     <Router>
       <Analytics />
       <ThemeProvider theme={theme}>
-        <div className="App" style={{ display: 'flex' }}>
-          <SidebarNav />
+        <div className="App">
+          <header>
+            <SidebarNav />
+          </header>
           <div id="content" style={{ 
-            flexGrow: 1, 
-            marginLeft: '60px', // This pushes the content away from the left edge
-            marginRight: '200px', // This should be the width of the SidebarNav to prevent overlap
-            padding: '20px' // Optional padding for better content appearance
+            padding: '0 20px',
+            marginTop: '56px',
+            width: '100%',
+            boxSizing: 'border-box',
+            overflowX: 'hidden'
           }}>
-            <Home />
-            <About />
-            <Experience />
-            <Projects />
-            <Credits />
+            <Box component="section" sx={{ paddingTop: '10px', paddingBottom: '30px' }}>
+              <Home />
+            </Box>
+            
+            <Box component="section" sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+              <About />
+            </Box>
+            
+            <Box component="section" sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+              <Experience />
+            </Box>
+            
+            <Box component="section" sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+              <Projects />
+            </Box>
+            
+            <Box component="section" sx={{ paddingTop: '20px', paddingBottom: '20px' }}>
+              <Credits />
+            </Box>
           </div>
         </div>
       </ThemeProvider>

@@ -4,12 +4,12 @@ import '../styles/About.css';
 
 const About = () => {
   const techStack = [
-    "Python",
     "Javascript ES6+",
-    "React.js",
-    "Three.js",
-    "Pandas & PySpark",
-    "HTML & CSS"
+    "Typescript",
+    "React.js + Vite",
+    "Next.js",
+    "Python",
+    "Pandas & PySpark"
   ];
 
   return (
