@@ -39,7 +39,7 @@ const Analytics = () => {
       
       // Prepare the track data without country info initially
       let trackData = {
-        projectApiKey: '155dbe305c18ac4ba5d33800be544c3a',
+        projectApiKey: '95a8287ac5d341f3389961a512e5d953',
         page: window.location.pathname,
         referrer: document.referrer,
         sessionId: sessionId,
