@@ -8,20 +8,16 @@ const Analytics = () => {
     // Enhanced device type detection function
     const getDeviceType = () => {
       const ua = navigator.userAgent;
-      console.log("User Agent:", ua);
       
       // More comprehensive detection pattern for mobile
       if (/Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|webOS/i.test(ua)) {
         // Determine if it's a tablet or mobile
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(ua)) {
-          console.log("Detected as: tablet");
           return 'tablet';
         }
-        console.log("Detected as: mobile");
         return 'mobile';
       }
       
-      console.log("Detected as: desktop");
       return 'desktop';
     };
 
@@ -35,7 +31,6 @@ const Analytics = () => {
       }
       
       const deviceType = getDeviceType();
-      console.log("Sending analytics with device type:", deviceType);
       
       // Prepare the track data without country info initially
       let trackData = {
@@ -67,8 +62,6 @@ const Analytics = () => {
       
       // Now send the analytics data (with or without country info)
       try {
-        console.log("Sending track data:", trackData);
-        
         const response = await fetch('https://metrics-hub.netlify.app/api/track', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -76,14 +69,11 @@ const Analytics = () => {
           keepalive: true
         });
         
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Track API response:", data);
-        } else {
-          console.error("Track API error:", await response.text());
+        if (!response.ok) {
+          console.error("API error:", await response.text());
         }
       } catch (err) {
-        console.error('Analytics tracking error:', err);
+        console.error('Network error:', err);
       }
     };
 
@@ -94,7 +84,6 @@ const Analytics = () => {
     const pingInterval = setInterval(() => {
       sendAnalytics();
     }, 4 * 60 * 1000); // Every 4 minutes
-    
     
     return () => clearInterval(pingInterval);
   }, [location]);
