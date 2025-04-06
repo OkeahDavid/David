@@ -69,7 +69,7 @@ const Analytics = () => {
       try {
         console.log("Sending track data:", trackData);
         
-        const response = await fetch('http://localhost:3000/api/track', {
+        const response = await fetch('https://metrics-hub.netlify.app/api/track', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(trackData),
