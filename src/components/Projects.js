@@ -34,7 +34,7 @@ const projectData = [
     ],
     tech: ["Node.js", "Three.js", "HTML"],
     github: "https://github.com/OkeahDavid/Earth",
-    link: "https://lambent-arithmetic-f05abd.netlify.app/",
+    link: "https://interactive-earth-3d.netlify.app/",
     preview: true,
   },
   {
