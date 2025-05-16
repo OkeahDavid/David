@@ -1,6 +1,3 @@
-<h1 align="center">
-  davidokeah.com - v1
-</h1>
 <p align="center">
   The first iteration of <a href="https://davidokeah.com" target="_blank">davidokeah.com</a> built with React.js leveraging Material UI.
 </p>
