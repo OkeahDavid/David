@@ -28,7 +28,7 @@ const projectData = [
     ],
     tech: ["Next.js", "Typescript", "Tailwind CSS"],
     github: "https://github.com/OkeahDavid/LiveDiaries",
-    link: "https://live-diaries.netlify.app/",
+    link: "https://livediaries.netlify.app/",
     image: "/project-images/live-diaries.png",
     category: "web",
   },  
