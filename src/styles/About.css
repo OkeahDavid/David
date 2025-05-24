@@ -53,13 +53,13 @@
 @media (max-width: 768px) {
   .about-container {
     padding: 5vh 5vw;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .typography-body1 {
     font-size: 1rem;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
     margin-bottom: 3vh;
   }
 
@@ -80,6 +80,11 @@
   .project-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .projects-header {
+    text-align: left !important;
+    width: 100%;
   }
 }
 

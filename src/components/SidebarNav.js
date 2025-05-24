@@ -255,7 +255,7 @@ const TopNav = () => {
 
       {/* Mobile Navigation Drawer */}
       <Drawer
-        anchor="right"
+        anchor="left"
         open={isMobileOrTablet && mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         PaperProps={{
