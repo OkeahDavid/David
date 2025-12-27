@@ -13,40 +13,29 @@ const projectData = [
   {
     title: "Metric Hub",
     description: [
-      "A lightweight, privacy-focused analytics platform for tracking website statistics across multiple projects.",
+      "A privacy-focused analytics platform for tracking website statistics across multiple projects.",
     ],
     tech: ["Next.js", "Typescript", "Tailwind CSS"],
     github: "https://github.com/OkeahDavid/Metrics-hub",
     link: "https://metrics-hub.netlify.app/",
-    image: "/project-images/metric-hub.png", // Default image that will be used if available
+    image: "/project-images/metrics-hub.png", // Default image that will be used if available
     category: "web",
   },
   {
-    title: "Live Diaries",
+    title: "Flowgen",
     description: [
-      "This is the landing page for the Live Diaries mobile app",
+      "A drag-and-drop interface for building AI agent workflows using Microsoft's AutoGen framework.",
     ],
-    tech: ["Next.js", "Typescript", "Tailwind CSS"],
-    github: "https://github.com/OkeahDavid/LiveDiaries",
-    link: "https://livediaries.netlify.app/",
-    image: "/project-images/live-diaries.png",
-    category: "web",
-  },  
-  {
-    title: "BibleVerseTweets",
-    description: [
-      "A twitter bot that automatically posts a tweet containing a bible verse everyday. Feel free to give the page a follow",
-    ],
-    tech: ["Python", "Flask", "Google Cloud Platform (GCP)"],
-    github: "https://github.com/OkeahDavid/BibleVerseTweets",
-    link: "https://twitter.com/BibleBotTweets",
-    image: "/project-images/bible-tweets.png",
-    category: "automation",
+    tech: ["React", "TypeScript", "Python", "FastAPI", "Material UI", "AutoGen"],
+    github: "https://github.com/OkeahDavid/Flowgen",
+    link: "https://flowgen-ai.netlify.app/",
+    image: "/project-images/flowgen.png",
+    category: "ai",
   },
   {
     title: "Earth",
     description: [
-      "A three.js simulation of the Earth and its moon",
+      "An interactive 3D simulation of Earth and its moon with zoom and rotation controls.",
     ],
     tech: ["Node.js", "Three.js", "HTML"],
     github: "https://github.com/OkeahDavid/Earth",
@@ -56,19 +45,9 @@ const projectData = [
     category: "3D",
   },
   {
-    title: "CIFAR-10 CNN Classifier",
-    description: [
-      "This project consists of the training of a CNN to classify images from the CIFAR-10 dataset",
-    ],
-    tech: ["Python", "Keras", "Tensorflow"],
-    github: "https://github.com/OkeahDavid/CIFAR-10-CNN-Classifier",
-    image: "/project-images/cifar10.png",
-    category: "ai",
-  },
-  {
     title: "His Family Global Outreach Website",
     description: [
-      "Creation of His Family Global Outreach Website",
+      "A responsive website with interactive elements and modern design for a global outreach organization.",
     ],
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/OkeahDavid/HFGO",
@@ -76,6 +55,38 @@ const projectData = [
     image: "/project-images/hfgo.png",
     category: "web",
   },
+  {
+    title: "VLR Stats MCP",
+    description: [
+      "A Model Context Protocol server providing Claude AI access to VALORANT esports data from VLR.gg.",
+    ],
+    tech: ["Python", "FastMCP", "BeautifulSoup4", "httpx"],
+    github: "https://github.com/OkeahDavid/vlr-stats-mcp",
+    image: "/project-images/vlr-stats.png",
+    category: "ai",
+  },
+  {
+    title: "Live Diaries",
+    description: [
+      "A modern landing page for the Live Diaries mobile app.",
+    ],
+    tech: ["Next.js", "Typescript", "Tailwind CSS"],
+    github: "https://github.com/OkeahDavid/LiveDiaries",
+    link: "https://livediaries.netlify.app/",
+    image: "/project-images/live-diaries.png",
+    category: "web",
+  },
+  {
+    title: "CIFAR-10 CNN Classifier",
+    description: [
+      "A convolutional neural network trained to classify images from the CIFAR-10 dataset.",
+    ],
+    tech: ["Python", "Keras", "Tensorflow"],
+    github: "https://github.com/OkeahDavid/CIFAR-10-CNN-Classifier",
+    image: "/project-images/cifar10.png",
+    category: "ai",
+  },
+  
   
   // More projects...
 ];
@@ -86,7 +97,6 @@ const categories = [
   { id: "web", label: "Web Development", icon: <LanguageIcon /> },
   { id: "ai", label: "AI & Machine Learning", icon: <CodeIcon /> },
   { id: "3D", label: "3D Graphics", icon: <ImageIcon /> },
-  { id: "automation", label: "Automation", icon: <CodeIcon /> }
 ];
 
 const Projects = () => {

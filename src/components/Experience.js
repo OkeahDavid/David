@@ -13,7 +13,9 @@ const Experience = () => {
       duration: "January 2025 - Present",
       icon: faFlask ,
       responsibilities: [
-        "Developed full-stack solutions using ReactJS and Django, creating interactive dashboards and reports",
+        "Built and optimized full-stack applications using React.js and Django frameworks",
+        "Developed full-stack GenAI applications with Azure OpenAI integration, implementing agentic workflows using AutoGen for multi-agent task coordination",
+        "Deployed and maintained applications using Docker and Azure Cloud infrastructure",
       ],
     },
     {
@@ -23,8 +25,9 @@ const Experience = () => {
       duration: "March 2024 - November 2024",
       icon: faPlane,
       responsibilities: [
-        "Part of the Engineering Support team",
-        "Responsible for Model-Based Methods and tools in the area of electronics in the cabin.",
+        "Developed React.js front-end applications for cabin electronics control systems, improving user interface",
+        "Built back-end solutions and REST APIs with C# and .NET framework, enhancing data processing for cabin electronic components",
+        "Managed product ownership tasks, including backlog organization and coordination between stakeholders and development team",
       ],
     },
     {
