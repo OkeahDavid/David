@@ -2,7 +2,9 @@
     display: inline-block;
     background-color: currentColor;
     margin-left: 5px;
-    width: 2px;
+    width: 4px;
+    height: 1.1em;
+    vertical-align: top;
     animation: blink 1.5s step-start infinite;
   }
   

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/TypingEffect.css';
 
-export const BlinkingCursor = () => <span className="blinking-cursor">|</span>;
+export const BlinkingCursor = () => <span className="blinking-cursor"></span>;
 
 export const TypingEffect = ({ text, speed = 100 }) => {
   const [displayedText, setDisplayedText] = useState('');
