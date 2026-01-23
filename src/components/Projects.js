@@ -6,6 +6,7 @@ import XIcon from '@mui/icons-material/X';
 import CodeIcon from '@mui/icons-material/Code';
 import ImageIcon from '@mui/icons-material/Image';
 import LaptopIcon from '@mui/icons-material/Laptop';
+import GetAppIcon from '@mui/icons-material/GetApp';
 import FadeInSection from './FadeInSection';
 import '../styles/Projects.css';
 
@@ -19,6 +20,18 @@ const projectData = [
     github: "https://github.com/OkeahDavid/Metrics-hub",
     link: "https://metrics-hub.netlify.app/",
     image: "/project-images/metrics-hub.png", // Default image that will be used if available
+    category: "web",
+  },
+  {
+    title: "AfterThought",
+    description: [
+      "A privacy-focused journaling app for capturing daily thoughts and rediscovering them randomly each day.",
+      "Includes a companion landing page website built with modern web technologies."
+    ],
+    tech: ["TypeScript", "CSS", "HTML"],
+    github: "https://github.com/OkeahDavid/AfterThought-Web",
+    link: "https://play.google.com/store/apps/details?id=com.afterthought.app",
+    image: "/project-images/afterthought.png",
     category: "web",
   },
   {
@@ -218,11 +231,11 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener" 
-                    startIcon={project.link.includes('twitter.com') ? <XIcon /> : <LanguageIcon />}
+                    startIcon={project.link.includes('twitter.com') ? <XIcon /> : project.link.includes('play.google.com') ? <GetAppIcon /> : <LanguageIcon />}
                     className="action-button"
                     aria-label="View demo"
                   >
-                    {project.link.includes('twitter.com') ? 'Twitter' : 'Demo'}
+                    {project.link.includes('twitter.com') ? 'Twitter' : project.link.includes('play.google.com') ? 'Download' : 'Demo'}
                   </Button>
                 )}
               </Box>
