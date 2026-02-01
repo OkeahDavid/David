@@ -12,11 +12,22 @@ import '../styles/Projects.css';
 
 const projectData = [
   {
+    title: "Crowdless",
+    description: [
+      "See how people might react. Without asking anyone.",
+      "Run messages, ideas, and questions through a synthetic crowd to understand reactions before you send, post, or ship anything.",
+    ],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL",],
+    link: "https://crowdless.app",
+    image: "/project-images/crowdless.png",
+    category: "web",
+  },
+  {
     title: "Metric Hub",
     description: [
       "A privacy-focused analytics platform for tracking website statistics across multiple projects.",
     ],
-    tech: ["Next.js", "Typescript", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/OkeahDavid/Metrics-hub",
     link: "https://metrics-hub.netlify.app/",
     image: "/project-images/metrics-hub.png", // Default image that will be used if available
@@ -83,7 +94,7 @@ const projectData = [
     description: [
       "A modern landing page for the Live Diaries mobile app.",
     ],
-    tech: ["Next.js", "Typescript", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/OkeahDavid/LiveDiaries",
     link: "https://livediaries.netlify.app/",
     image: "/project-images/live-diaries.png",
@@ -94,7 +105,7 @@ const projectData = [
     description: [
       "A convolutional neural network trained to classify images from the CIFAR-10 dataset.",
     ],
-    tech: ["Python", "Keras", "Tensorflow"],
+    tech: ["Python", "Keras", "TensorFlow"],
     github: "https://github.com/OkeahDavid/CIFAR-10-CNN-Classifier",
     image: "/project-images/cifar10.png",
     category: "ai",
@@ -233,9 +244,9 @@ const Projects = () => {
                     rel="noopener" 
                     startIcon={project.link.includes('twitter.com') ? <XIcon /> : project.link.includes('play.google.com') ? <GetAppIcon /> : <LanguageIcon />}
                     className="action-button"
-                    aria-label="View demo"
+                    aria-label="View live site"
                   >
-                    {project.link.includes('twitter.com') ? 'Twitter' : project.link.includes('play.google.com') ? 'Download' : 'Demo'}
+                    {project.link.includes('twitter.com') ? 'Twitter' : project.link.includes('play.google.com') ? 'Download' : 'Live'}
                   </Button>
                 )}
               </Box>
