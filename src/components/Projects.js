@@ -12,17 +12,6 @@ import '../styles/Projects.css';
 
 const projectData = [
   {
-    title: "Crowdless",
-    description: [
-      "See how people might react. Without asking anyone.",
-      "Run messages, ideas, and questions through a synthetic crowd to understand reactions before you send, post, or ship anything.",
-    ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL",],
-    link: "https://crowdless.app",
-    image: "/project-images/crowdless.png",
-    category: "web",
-  },
-  {
     title: "Metric Hub",
     description: [
       "A privacy-focused analytics platform for tracking website statistics across multiple projects.",
