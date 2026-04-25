@@ -24,7 +24,7 @@ function App() {
             <SidebarNav />
           </header>
           <div id="content" style={{ 
-            padding: '0 20px',
+            padding: '0',
             marginTop: '56px',
             width: '100%',
             boxSizing: 'border-box',

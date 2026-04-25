@@ -14,7 +14,7 @@ const About = () => {
 
   return (
     <Box id="about" className="about-container">
-      <Typography variant="h4" gutterBottom className="projects-header">
+      <Typography variant="h4" className="section-header">
         / about
       </Typography>
       <Typography variant="body1" className="typography-body1">

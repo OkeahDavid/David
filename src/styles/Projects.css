@@ -12,12 +12,6 @@
   align-items: flex-start;
 }
 
-.projects-header {
-  text-align: left;
-  width: 100%;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
 
 /* Project filters styling */
 .project-filters {
@@ -239,7 +233,7 @@
 /* Responsive adjustments for tablet view */
 @media (max-width: 960px) {
   .projects-container {
-    padding: 30px 20px;
+    padding: 30px 5vw;
   }
   
   .projects-grid {
@@ -251,15 +245,15 @@
 /* Responsive adjustments for mobile view */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 20px 15px;
+    padding: 20px 5vw;
   }
 
   .projects-header {
-    text-align: center;
+    text-align: left;
   }
   
   .project-filters {
-    justify-content: center;
+    justify-content: flex-start;
   }
   
   .projects-grid {

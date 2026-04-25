@@ -44,7 +44,7 @@ const projectData = [
     link: "https://interactive-earth-3d.netlify.app/",
     preview: true,
     image: "/project-images/earth2.png",
-    category: "3D",
+    category: "graphics",
   },
   {
     title: "Flowgen",
@@ -109,7 +109,7 @@ const categories = [
   { id: "all", label: "All Projects", icon: <LaptopIcon /> },
   { id: "web", label: "Web Development", icon: <LanguageIcon /> },
   { id: "ai", label: "AI & Machine Learning", icon: <CodeIcon /> },
-  { id: "3D", label: "3D Graphics", icon: <ImageIcon /> },
+  { id: "graphics", label: "Graphics", icon: <ImageIcon /> },
 ];
 
 const Projects = () => {
@@ -150,7 +150,7 @@ const Projects = () => {
   return (
     <Box id="projects" className="projects-container">
       <FadeInSection>
-        <Typography variant="h4" gutterBottom className="projects-header">
+        <Typography variant="h4" className="section-header">
           / projects
         </Typography>
       </FadeInSection>

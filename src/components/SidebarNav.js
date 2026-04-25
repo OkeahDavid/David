@@ -8,19 +8,13 @@ import {
   ListItemText, 
   IconButton, 
   useTheme, 
-  useMediaQuery,
-  Drawer,
-  ListItemIcon
+  useMediaQuery
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import HomeIcon from '@mui/icons-material/Home';
-import PersonIcon from '@mui/icons-material/Person';
-import WorkIcon from '@mui/icons-material/Work';
-import CodeIcon from '@mui/icons-material/Code';
 
 const TopNav = () => {
   const theme = useTheme();
@@ -38,10 +32,10 @@ const TopNav = () => {
   };
 
   const menuItems = React.useMemo(() => [
-    { text: 'Home', href: '#home', icon: <HomeIcon /> },
-    { text: 'About', href: '#about', icon: <PersonIcon /> },
-    { text: 'Experience', href: '#experience', icon: <WorkIcon /> },
-    { text: 'Projects', href: '#projects', icon: <CodeIcon /> },
+    { text: 'Home', href: '#home' },
+    { text: 'About', href: '#about' },
+    { text: 'Experience', href: '#experience' },
+    { text: 'Projects', href: '#projects' },
   ], []);
 
   // Handle smooth scrolling when clicking nav items
@@ -177,14 +171,19 @@ const TopNav = () => {
           background: colors.background, 
           boxShadow: scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none',
           backdropFilter: 'blur(10px)',
-          zIndex: (theme) => theme.zIndex.drawer + 1,
+          zIndex: 1300,
           top: 0,
           left: 0,
           right: 0,
           transition: 'background-color 0.3s ease, box-shadow 0.3s ease'
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Toolbar sx={{ 
+            justifyContent: 'space-between', 
+            paddingLeft: { xs: '16px', md: '200px' },
+            paddingRight: { xs: '16px', md: '200px' },
+            minHeight: { xs: '56px' }
+          }}>
           {isMobileOrTablet ? (
             <>
               <IconButton 
@@ -194,9 +193,9 @@ const TopNav = () => {
                 onClick={toggleMobileMenu}
                 sx={{ color: colors.icons }}
               >
-                <MenuIcon />
+                {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
               </IconButton>
-              <Box sx={{ display: 'flex', gap: '10px' }}>
+              <Box sx={{ display: 'flex', gap: '8px' }}>
                 {renderIconButton(EmailIcon, 'mailto:okeahdavid@gmail.com', 'Email')}
                 {renderIconButton(LinkedInIcon, 'https://www.linkedin.com/in/david-okeah', 'LinkedIn')}
                 {renderIconButton(GithubIcon, 'https://github.com/OkeahDavid', 'GitHub')}
@@ -253,60 +252,54 @@ const TopNav = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Navigation Drawer */}
-      <Drawer
-        anchor="left"
-        open={isMobileOrTablet && mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-        PaperProps={{
-          sx: {
-            width: '75%',
-            maxWidth: '300px',
-            backgroundColor: '#111',
-            color: '#fff',
-            padding: '20px 0'
-          }
-        }}
-      >
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
-          <IconButton onClick={() => setMobileMenuOpen(false)} sx={{ color: colors.icons }}>
-            <CloseIcon />
-          </IconButton>
-        </Box>
-        <List>
-          {menuItems.map((item) => (
-            <ListItem
-              button
+      {/* Mobile Full-Screen Overlay Menu */}
+      {isMobileOrTablet && (
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.95)',
+            zIndex: 1299,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '8px',
+            opacity: mobileMenuOpen ? 1 : 0,
+            pointerEvents: mobileMenuOpen ? 'auto' : 'none',
+            transition: 'opacity 0.3s ease',
+          }}
+        >
+          {menuItems.map((item, index) => (
+            <Box
               key={item.text}
               component="a"
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               sx={{
-                borderLeft: activeSection === item.href.substring(1) ? `4px solid ${colors.activeText}` : '4px solid transparent',
-                backgroundColor: activeSection === item.href.substring(1) ? 'rgba(255, 69, 69, 0.1)' : 'transparent',
+                textDecoration: 'none',
+                color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
+                fontSize: '2rem',
+                fontWeight: activeSection === item.href.substring(1) ? 600 : 400,
                 padding: '12px 24px',
-                transition: 'background-color 0.2s ease, border-left 0.2s ease'
+                borderLeft: activeSection === item.href.substring(1) ? `3px solid ${colors.activeText}` : '3px solid transparent',
+                transition: 'all 0.2s ease',
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                opacity: mobileMenuOpen ? 1 : 0,
+                transitionDelay: mobileMenuOpen ? `${index * 0.08}s` : '0s',
+                '&:hover': {
+                  color: colors.activeText,
+                },
               }}
             >
-              <ListItemIcon sx={{ 
-                color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
-                minWidth: '40px'
-              }}>
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText 
-                primary={item.text} 
-                sx={{ 
-                  color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
-                  '& .MuiTypography-root': {
-                    fontWeight: activeSection === item.href.substring(1) ? 500 : 400
-                  }
-                }}
-              />
-            </ListItem>
+              /{item.text.toLowerCase()}
+            </Box>
           ))}
-        </List>
-      </Drawer>
+        </Box>
+      )}
 
       {/* Spacer for fixed AppBar */}
       <Toolbar />

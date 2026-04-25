@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlane, faCar,faFlask  } from '@fortawesome/free-solid-svg-icons';
+import { Box, Typography } from '@mui/material';
 import '../styles/Experience.css';
 
 const Experience = () => {
@@ -11,7 +9,6 @@ const Experience = () => {
       title: "Software Engineer",
       company: "Sasol",
       duration: "January 2025 - Present",
-      icon: faFlask ,
       responsibilities: [
         "Built and optimized full-stack applications using React.js and Django frameworks",
         "Developed full-stack GenAI applications with Azure OpenAI integration, implementing agentic workflows using AutoGen for multi-agent task coordination",
@@ -23,7 +20,6 @@ const Experience = () => {
       title: "Software Engineer",
       company: "Airbus",
       duration: "March 2024 - November 2024",
-      icon: faPlane,
       responsibilities: [
         "Developed React.js front-end applications for cabin electronics control systems, improving user interface",
         "Built back-end solutions and REST APIs with C# and .NET framework, enhancing data processing for cabin electronic components",
@@ -35,7 +31,6 @@ const Experience = () => {
       title: "Software Engineer",
       company: "Intenta Holding GmbH",
       duration: "January 2023 - December 2023",
-      icon: faCar,
       responsibilities: [
         "Developed and maintained data analysis pipelines using Python, Pandas and PySpark",
         "Executed the design, implementation, and processing of software modules used in the field of autonomous driving",
@@ -65,7 +60,7 @@ const Experience = () => {
 
   return (
     <Box id="experience">
-      <Typography variant="h4" className="title-header">
+      <Typography variant="h4" className="section-header title-header">
         / experience
       </Typography>
 
@@ -82,19 +77,17 @@ const Experience = () => {
           ))}
         </Box>
         <Box className="experience-details">
-          <Box className="experience-header">
-            <Typography variant="h5" className="experience-title">{experiences[selectedExpIndex].title}</Typography>
-            <Typography variant="subtitle1" className="experience-company">@ {experiences[selectedExpIndex].company}</Typography>
-            <Typography variant="subtitle2" className="experience-duration">{experiences[selectedExpIndex].duration}</Typography>
-          </Box>
-          <List className="experience-responsibilities">
+          <Typography variant="h5" className="experience-title">{experiences[selectedExpIndex].title}</Typography>
+          <Typography variant="subtitle1" className="experience-company">@ {experiences[selectedExpIndex].company}</Typography>
+          <Typography variant="subtitle2" className="experience-duration">{experiences[selectedExpIndex].duration}</Typography>
+          <ul className="experience-responsibilities">
             {experiences[selectedExpIndex].responsibilities.map((item, idx) => (
-              <ListItem key={idx} className="experience-item">
-                <FontAwesomeIcon icon={experiences[selectedExpIndex].icon} className="item-icon" />
-                <ListItemText primary={item} />
-              </ListItem>
+              <li key={idx} className="experience-item">
+                <span className="item-icon">▹</span>
+                <span>{item}</span>
+              </li>
             ))}
-          </List>
+          </ul>
         </Box>
       </Box>
     </Box>
