@@ -35,6 +35,18 @@ const projectData = [
     category: "web",
   },
   {
+    title: "Earth",
+    description: [
+      "An interactive 3D simulation of Earth and its moon with zoom and rotation controls.",
+    ],
+    tech: ["Node.js", "Three.js", "HTML", "globe.gl"],
+    github: "https://github.com/OkeahDavid/Earth",
+    link: "https://interactive-earth-3d.netlify.app/",
+    preview: true,
+    image: "/project-images/earth2.png",
+    category: "3D",
+  },
+  {
     title: "Flowgen",
     description: [
       "A drag-and-drop interface for building AI agent workflows using Microsoft's AutoGen framework.",
@@ -46,23 +58,11 @@ const projectData = [
     category: "ai",
   },
   {
-    title: "Earth",
-    description: [
-      "An interactive 3D simulation of Earth and its moon with zoom and rotation controls.",
-    ],
-    tech: ["Node.js", "Three.js", "HTML"],
-    github: "https://github.com/OkeahDavid/Earth",
-    link: "https://interactive-earth-3d.netlify.app/",
-    preview: true,
-    image: "/project-images/earth.png",
-    category: "3D",
-  },
-  {
     title: "His Family Global Outreach Website",
     description: [
       "A responsive website with interactive elements and modern design for a global outreach organization.",
     ],
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech: ["HTML", "CSS", "TypeScript", "React"],
     github: "https://github.com/OkeahDavid/HFGO",
     link: "https://hfgo.netlify.app",
     image: "/project-images/hfgo.png",
