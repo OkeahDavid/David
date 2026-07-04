@@ -12,6 +12,17 @@ import '../styles/Projects.css';
 
 const projectData = [
   {
+    title: "pixelbench",
+    description: [
+      "Speedtest for your CPU vs GPU — an image-processing benchmark with a native OpenCV CLI (published on PyPI) and an in-browser WebGPU version.",
+    ],
+    tech: ["Python", "OpenCV", "React", "TypeScript", "WebGPU", "Vite"],
+    github: "https://github.com/OkeahDavid/pixelbench",
+    link: "https://pixelbench.netlify.app/",
+    image: "/project-images/pixelbench.png",
+    category: "graphics",
+  },
+  {
     title: "Metric Hub",
     description: [
       "A privacy-focused analytics platform for tracking website statistics across multiple projects.",
