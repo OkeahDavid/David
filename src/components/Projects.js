@@ -12,6 +12,17 @@ import '../styles/Projects.css';
 
 const projectData = [
   {
+    title: "Midnight Showroom",
+    description: [
+      "A night-time 3D car showroom in the browser. Cars fly together part by part, drive in and out when you switch, and come with sourced specs and real factory colours.",
+    ],
+    tech: ["JavaScript", "Three.js", "anime.js", "WebGL", "Parcel"],
+    github: "https://github.com/OkeahDavid/midnight-showroom",
+    link: "https://midnight-showroom.netlify.app/",
+    image: "/project-images/midnight-showroom.png",
+    category: "graphics",
+  },
+  {
     title: "pixelbench",
     description: [
       "Speedtest for your CPU vs GPU — an image-processing benchmark with a native OpenCV CLI (published on PyPI) and an in-browser WebGPU version.",
