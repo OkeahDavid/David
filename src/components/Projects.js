@@ -173,7 +173,7 @@ const Projects = () => {
     <Box id="projects" className="projects-container container">
       <FadeInSection>
         <Typography variant="h4" className="section-header">
-          / projects
+          Projects
         </Typography>
       </FadeInSection>
       

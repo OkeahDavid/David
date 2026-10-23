@@ -1,85 +1,48 @@
-/* Experience */
-.experience-container {
-  display: flex;
-  gap: 32px;
-  padding: 32px 36px;
-  color: #fff;
-}
+/* Experience: cream type on navy, no boxes */
+.experience-container { display: flex; gap: 56px; color: var(--cream); }
 
-.experience-selector {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  gap: 12px;
-}
+.experience-selector { display: flex; flex-direction: column; flex-shrink: 0; gap: 4px; min-width: 170px; }
 
 .company-name {
+  position: relative;
   cursor: pointer;
-  padding: 10px 26px !important;
-  font-family: var(--font-display) !important;
-  font-size: 1.05rem !important;
-  color: var(--ink);
-  text-align: center;
-  white-space: nowrap;
-  background: var(--chrome);
-  border-radius: 999px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 2px 0 #fff;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  padding: 10px 0 10px 30px !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  color: var(--sky);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
-.company-name:hover { transform: translateX(4px); filter: brightness(1.06); }
-
-.company-name.active {
-  color: #fff;
-  background: linear-gradient(180deg, #ff5a4d 0%, var(--red) 50%, var(--red-deep) 100%);
-  box-shadow: 0 0 0 3px #dfe6ec, 0 6px 14px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.5);
-  transform: translateX(8px);
+.company-name::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  border: 2.5px solid var(--sky);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
+.company-name:hover { color: var(--cream); transform: translateX(4px); }
+.company-name.active { color: var(--cream); font-weight: 800 !important; }
+.company-name.active::before { background: var(--red); border-color: var(--red); }
 
 .experience-details { flex-grow: 1; text-align: left; }
-
-.experience-title {
-  margin-bottom: 4px !important;
-  font-size: 1.7rem !important;
-}
-
-.experience-company {
-  color: var(--gold);
-  font-weight: 800 !important;
-  margin-bottom: 2px !important;
-}
-
-.experience-duration {
-  color: var(--sky-light);
-  font-size: 0.95rem !important;
-  margin-bottom: 14px !important;
-}
+.experience-title { margin-bottom: 4px !important; font-size: 2.1rem !important; color: var(--cream); }
+.experience-company { margin-bottom: 2px !important; font-size: 1.2rem !important; font-weight: 800 !important; color: var(--gold); }
+.experience-duration { margin-bottom: 18px !important; font-size: 1rem !important; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); }
 
 .experience-responsibilities { padding-left: 0; margin: 0; list-style: none; }
-
-.experience-item {
-  display: flex;
-  align-items: flex-start;
-  font-size: 1.05rem;
-  line-height: 1.55;
-  padding: 8px 0;
-  color: #eaf4ff;
-}
-
-.item-icon {
-  width: 12px;
-  height: 12px;
-  margin: 8px 14px 0 0;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ff6a5c, var(--red));
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
-}
+.experience-item { display: flex; align-items: flex-start; padding: 8px 0; font-size: 1.15rem; line-height: 1.55; max-width: 680px; }
+.item-icon { width: 10px; height: 10px; margin: 9px 16px 0 0; flex-shrink: 0; border-radius: 50%; background: var(--gold); }
 
 @media (max-width: 768px) {
-  .experience-container { flex-direction: column; padding: 22px; gap: 20px; }
-  .experience-selector { flex-direction: row; overflow-x: auto; padding: 6px 4px 10px; }
-  .company-name { padding: 8px 18px !important; font-size: 0.95rem !important; }
-  .company-name:hover, .company-name.active { transform: none; }
-  .experience-title { font-size: 1.4rem !important; }
-  .experience-item { font-size: 0.95rem; }
+  .experience-container { flex-direction: column; gap: 24px; }
+  .experience-selector { flex-direction: row; gap: 20px; overflow-x: auto; min-width: 0; }
+  .company-name { padding: 8px 0 8px 24px !important; font-size: 1.1rem !important; white-space: nowrap; }
+  .company-name:hover { transform: none; }
+  .experience-title { font-size: 1.6rem !important; }
+  .experience-item { font-size: 1.05rem; }
 }

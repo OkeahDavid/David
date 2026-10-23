@@ -61,10 +61,10 @@ const Experience = () => {
   return (
     <Box id="experience" className="container">
       <Typography variant="h4" className="section-header title-header">
-        / experience
+        Experience
       </Typography>
 
-      <Box className="experience-container todayland-panel">
+      <Box className="experience-container">
         <Box className="experience-selector">
           {experiences.map((exp, index) => (
             <Typography 

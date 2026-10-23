@@ -9,7 +9,6 @@ import Projects from "./components/Projects";
 import Credits from "./components/Credits";
 import SidebarNav from './components/SidebarNav';
 import Analytics from './components/Analytics';
-import Todayland from './components/Todayland';
 import { Box } from "@mui/material";
 
 import "./App.css";
@@ -19,36 +18,23 @@ function App() {
   return (
     <Router>
       <Analytics />
-      <Todayland />
       <ThemeProvider theme={theme}>
         <div className="App">
           <header>
             <SidebarNav />
           </header>
-          <div id="content" style={{ 
-            padding: '0',
-            marginTop: '56px',
-            width: '100%',
-            boxSizing: 'border-box',
-            overflowX: 'hidden'
-          }}>
-            <Box component="section" sx={{ paddingTop: '10px', paddingBottom: '30px' }}>
-              <Home />
-            </Box>
-            
-            <Box component="section" sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+          <div id="content">
+            <Home />
+            <Box component="section" className="band band-cream">
               <About />
             </Box>
-            
-            <Box component="section" sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+            <Box component="section" className="band band-navy">
               <Experience />
             </Box>
-            
-            <Box component="section" sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
+            <Box component="section" className="band band-cream band-cream-top">
               <Projects />
             </Box>
-            
-            <Box component="section" sx={{ paddingTop: '20px', paddingBottom: '20px' }}>
+            <Box component="section" className="band band-navy band-footer">
               <Credits />
             </Box>
           </div>

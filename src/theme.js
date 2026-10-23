@@ -2,19 +2,18 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
-    primary: { main: '#e5141a' },
-    secondary: { main: '#7cc8ff' },
-    error: { main: '#ff3b30' },
-    background: { default: '#0f3aa8', paper: '#0a2a7a' },
+    primary: { main: '#e8372c' },
+    secondary: { main: '#2b6fe0' },
+    background: { default: '#f8f0dc', paper: '#fffaf0' },
+    text: { primary: '#0a2463' },
   },
   typography: {
-    fontFamily: '"Nunito", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Jost", "Helvetica", "Arial", sans-serif',
     fontSize: 14,
-    h1: { fontFamily: '"Righteous", "Nunito", sans-serif', fontSize: '4rem' },
-    h4: { fontFamily: '"Righteous", "Nunito", sans-serif' },
-    h5: { fontFamily: '"Righteous", "Nunito", sans-serif' },
-    h6: { fontFamily: '"Righteous", "Nunito", sans-serif' },
+    h1: { fontWeight: 800 },
+    h4: { fontWeight: 800 },
+    h5: { fontWeight: 800 },
+    h6: { fontWeight: 800 },
   },
 });
 

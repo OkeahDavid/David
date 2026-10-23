@@ -14,9 +14,9 @@ const About = () => {
 
   return (
     <Box id="about" className="about-container container">
-      <Box className="todayland-panel about-panel">
+      <Box className="about-text">
       <Typography variant="h4" className="section-header">
-        / about
+        About
       </Typography>
       <Typography variant="body1" className="typography-body1">
         I'm a software developer based in Hamburg. I am greatly interested in data analysis, full-stack 
@@ -37,6 +37,9 @@ const About = () => {
       <Typography variant="body1" className="typography-body1">
         Outside of work I'm interested in games, anime, and football.
       </Typography>
+      </Box>
+      <Box className="about-portrait">
+        <img src="/profile_picture.jpg" alt="David" className="profile-image" />
       </Box>
     </Box>
   );

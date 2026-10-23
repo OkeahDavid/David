@@ -1,92 +1,37 @@
-/* Global.css - Todayland design system (retro-futuristic, optimistic, chrome + red on sky blue) */
+/* Global.css - design system: a 1930s travel poster of the future.
+   Flat saturated colour, rounded streamline forms, hard offset shadows, no gloss. */
 :root {
-  --sky-deep: #071e5c;
-  --sky: #1f5fd6;
-  --sky-light: #7cc8ff;
-  --red: #e5141a;
-  --red-bright: #ff3b30;
-  --red-deep: #a80a12;
-  --gold: #ffd54a;
-  --cream: #fff8e6;
-  --ink: #0a1f55;
-  --chrome: linear-gradient(135deg, #ffffff 0%, #c9d3dc 28%, #8795a3 52%, #eef3f7 74%, #9aa8b5 100%);
-  --panel: linear-gradient(160deg, rgba(14, 48, 140, 0.78), rgba(8, 28, 92, 0.86));
-  --font-display: 'Righteous', 'Fredoka', 'Trebuchet MS', sans-serif;
-  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --navy: #0a2463;
+  --navy-far: #123c92;
+  --blue: #2b6fe0;
+  --sky: #8fd0ff;
+  --red: #e8372c;
+  --gold: #f6b93b;
+  --teal: #16b1a6;
+  --cream: #f8f0dc;
+  --paper: #fffaf0;
+  --font: 'Jost', 'Futura', 'Century Gothic', sans-serif;
   --content-width: 1100px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-body);
+  font-family: var(--font);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--sky-deep);
-  color: #fff;
-}
-
-section {
-  padding: 56px 0;
+  background-color: var(--cream);
+  color: var(--navy);
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
-  line-height: 1.15;
-  font-family: var(--font-display);
-  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-family: var(--font);
+  font-weight: 800;
 }
 
-/* Section header: red disc badge + chrome capsule streaks */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  margin-bottom: 20px !important;
-  font-family: var(--font-display) !important;
-  font-size: 2.4rem !important;
-  color: #fff;
-  text-shadow: 0 3px 0 rgba(7, 30, 92, 0.55);
-}
-
-.section-header::before {
-  content: '';
-  width: 38px;
-  height: 38px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ff6a5c, var(--red) 55%, var(--red-deep));
-  box-shadow: 0 0 0 4px #dfe6ec, 0 0 0 7px #7f8d9b, 0 6px 14px rgba(0, 0, 0, 0.35);
-}
-
-.section-header::after {
-  content: '';
-  flex: 1;
-  height: 10px;
-  min-width: 40px;
-  border-radius: 999px;
-  background: var(--chrome);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0.9;
-}
-
-/* Glossy chrome-trimmed panel used by every section */
-.todayland-panel {
-  position: relative;
-  background: var(--panel);
-  border-radius: 28px;
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 0 0 0 3px rgba(223, 230, 236, 0.9), 0 0 0 5px rgba(127, 141, 155, 0.8), 0 20px 40px rgba(2, 12, 40, 0.45);
-  backdrop-filter: blur(6px);
-}
-
-/* Container for consistent width */
 .container {
   width: 100%;
   max-width: var(--content-width);
@@ -95,48 +40,77 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
 }
 
-/* Focus states for accessibility */
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+/* Colour bands. Navy bands are cut with a big curve, like a streamline roofline. */
+.band { position: relative; padding: 96px 0; text-align: left; }
+.band-cream { background: var(--cream); color: var(--navy); }
+.band-navy { background: var(--navy); color: var(--cream); }
+.band-cream-top {
+  margin-top: -64px;
+  padding-top: 150px;
+  border-radius: 50% 50% 0 0 / 64px 64px 0 0;
+  z-index: 1;
+}
+.band-navy:not(.band-footer) { padding-bottom: 150px; }
+.band-footer {
+  margin-top: -64px;
+  padding: 120px 0 24px;
+  border-radius: 50% 50% 0 0 / 64px 64px 0 0;
+  z-index: 2;
+}
+
+/* Section header: red dot + tracked caps, Futura-style */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 36px !important;
+  font-family: var(--font) !important;
+  font-weight: 800 !important;
+  font-size: 2.6rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.section-header::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+/* Buttons: flat colour with a hard offset shadow, like a print misregistration */
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  border: 3px solid var(--navy);
+  border-radius: 999px;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cream);
+  background: var(--red);
+  box-shadow: 4px 4px 0 var(--navy);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--navy); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--navy); }
+.btn-light { background: var(--cream); color: var(--navy); border-color: var(--cream); box-shadow: 4px 4px 0 var(--red); }
+.btn-light:hover { box-shadow: 6px 6px 0 var(--red); }
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
 }
 
 .skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background-color: var(--red);
-  color: white;
-  padding: 8px;
-  z-index: 1000;
-  transition: top 0.3s;
+  position: absolute; top: -40px; left: 0;
+  background-color: var(--red); color: white; padding: 8px; z-index: 1000; transition: top 0.3s;
 }
-
-.skip-link:focus {
-  top: 0;
-}
-
-/* Glossy red "bubble" button */
-.btn-bubble {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(180deg, #ff5a4d 0%, var(--red) 50%, var(--red-deep) 100%);
-  box-shadow: 0 0 0 3px #dfe6ec, 0 0 0 5px #7f8d9b, 0 10px 20px rgba(0, 0, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.5);
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-.btn-bubble:hover { transform: translateY(-3px) scale(1.04); filter: brightness(1.08); }
-.btn-bubble.chrome {
-  color: var(--ink);
-  background: var(--chrome);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 2px 0 #fff;
-}
+.skip-link:focus { top: 0; }
 
 /* Fade in section base styles */
 .fade-in-section {
@@ -182,9 +156,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.35);
+  border: 3px solid rgba(10, 36, 99, 0.2);
   border-radius: 50%;
-  border-top-color: #e5141a;
+  border-top-color: #e8372c;
   animation: spin 1s ease-in-out infinite;
   margin: 0 auto;
 }
@@ -195,7 +169,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Image loading skeleton */
 .image-loading-placeholder {
-  background: linear-gradient(90deg, #1a3f9a 25%, #2b63d0 50%, #1a3f9a 75%);
+  background: linear-gradient(90deg, #123c92 25%, #1d4fb5 50%, #123c92 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   height: 100%;

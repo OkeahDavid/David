@@ -24,13 +24,11 @@ const TopNav = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const colors = {
-    icons: '#ffffff',
-    text: '#ffffff',
-    background: scrolled
-      ? 'linear-gradient(180deg, rgba(7, 30, 92, 0.96), rgba(12, 44, 130, 0.92))'
-      : 'linear-gradient(180deg, rgba(7, 30, 92, 0.75), rgba(12, 44, 130, 0.55))',
-    activeText: '#ffffff',
-    inactiveText: '#eaf4ff'
+    icons: '#f8f0dc',
+    text: '#f8f0dc',
+    background: '#0a2463',
+    activeText: '#f8f0dc',
+    inactiveText: '#8fd0ff'
   };
 
   const menuItems = React.useMemo(() => [
@@ -149,7 +147,7 @@ const TopNav = () => {
         transition: 'transform 0.2s ease',
         '&:hover': {
           transform: 'scale(1.1)',
-          backgroundColor: 'rgba(255, 255, 255, 0.18)'
+          backgroundColor: 'rgba(248, 240, 220, 0.12)'
         }
       }} 
       href={href} 
@@ -171,15 +169,13 @@ const TopNav = () => {
         position="fixed" 
         sx={{ 
           background: colors.background, 
-          boxShadow: scrolled ? '0 6px 20px rgba(2, 12, 40, 0.45)' : 'none',
-          borderBottom: '4px solid transparent',
-          borderImage: 'linear-gradient(90deg, #7f8d9b, #ffffff, #c9d3dc, #ffffff, #7f8d9b) 1',
-          backdropFilter: 'blur(10px)',
+          boxShadow: 'none',
+          borderBottom: scrolled ? '3px solid #e8372c' : '3px solid transparent',
           zIndex: 1300,
           top: 0,
           left: 0,
           right: 0,
-          transition: 'background-color 0.3s ease, box-shadow 0.3s ease'
+          transition: 'border-color 0.3s ease'
         }}
       >
         <Toolbar sx={{ 
@@ -223,33 +219,36 @@ const TopNav = () => {
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
                     sx={{
-                      padding: '6px 20px',
-                      margin: '0 4px',
-                      borderRadius: '999px',
-                      fontFamily: 'var(--font-display)',
-                      background: activeSection === item.href.substring(1)
-                        ? 'linear-gradient(180deg, #ff5a4d 0%, #e5141a 50%, #a80a12 100%)'
-                        : 'transparent',
-                      boxShadow: activeSection === item.href.substring(1)
-                        ? '0 0 0 2px #dfe6ec, 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255,255,255,0.5)'
-                        : 'none',
-                      transition: 'background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease',
-                      '&:hover': {
-                        transform: 'translateY(-2px)',
-                        background: activeSection === item.href.substring(1)
-                          ? undefined
-                          : 'rgba(255, 255, 255, 0.18)'
-                      }
+                      padding: '6px 18px 6px 34px',
+                      position: 'relative',
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        left: '14px',
+                        top: '50%',
+                        width: '10px',
+                        height: '10px',
+                        marginTop: '-5px',
+                        borderRadius: '50%',
+                        backgroundColor: '#e8372c',
+                        transform: activeSection === item.href.substring(1) ? 'scale(1)' : 'scale(0)',
+                        transition: 'transform 0.2s ease'
+                      },
+                      '&:hover::before': { transform: 'scale(1)' },
+                      '&:hover': { backgroundColor: 'transparent' }
                     }}
                   >
                     <ListItemText
                       primary={item.text}
                       sx={{
                         color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
+                        transition: 'color 0.2s ease',
                         '& .MuiTypography-root': {
-                          fontFamily: 'var(--font-display)',
-                          fontSize: '1.05rem',
-                          letterSpacing: '0.04em'
+                          fontFamily: 'var(--font)',
+                          fontWeight: 600,
+                          fontSize: '1rem',
+                          letterSpacing: '0.12em',
+                          textTransform: 'uppercase'
                         }
                       }}
                     />
@@ -275,7 +274,7 @@ const TopNav = () => {
             left: 0,
             width: '100vw',
             height: '100vh',
-            background: 'linear-gradient(180deg, rgba(7, 30, 92, 0.97), rgba(15, 58, 168, 0.97))',
+            backgroundColor: '#0a2463',
             zIndex: 1299,
             display: 'flex',
             flexDirection: 'column',
@@ -297,17 +296,18 @@ const TopNav = () => {
                 textDecoration: 'none',
                 color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
                 fontSize: '2.2rem',
-                fontFamily: 'var(--font-display)',
-                fontWeight: 400,
+                fontFamily: 'var(--font)',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
                 padding: '12px 24px',
-                borderRadius: '999px',
-                background: activeSection === item.href.substring(1) ? 'linear-gradient(180deg, #ff5a4d, #e5141a 50%, #a80a12)' : 'transparent',
+                borderBottom: activeSection === item.href.substring(1) ? '4px solid #e8372c' : '4px solid transparent',
                 transition: 'all 0.2s ease',
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
                 opacity: mobileMenuOpen ? 1 : 0,
                 transitionDelay: mobileMenuOpen ? `${index * 0.08}s` : '0s',
                 '&:hover': {
-                  color: '#ffd54a',
+                  color: '#f6b93b',
                 },
               }}
             >
