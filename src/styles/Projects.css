@@ -50,10 +50,10 @@
 
 .project-header { display: flex; align-items: center; width: 100%; padding: 18px 20px 4px; box-sizing: border-box; }
 .project-title { flex: 1; margin: 0 !important; text-align: left; font-size: 1.45rem !important; color: var(--navy); }
-.project-description { margin: 0 !important; padding: 0 20px 10px; text-align: left; font-size: 1.05rem !important; line-height: 1.5 !important; color: #27407f; }
+.project-description { margin: 0 !important; padding: 0 20px 10px; text-align: left; font-size: 1.05rem !important; line-height: 1.5 !important; color: var(--ink-soft); }
 
 .tech-stacks { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 20px; }
-.tech-chip { padding: 2px 12px; font-size: 0.82rem; font-weight: 600; color: var(--navy); background: #e3ecfb; border-radius: 999px; }
+.tech-chip { padding: 2px 12px; font-size: 0.82rem; font-weight: 600; color: var(--navy); background: var(--chip); border-radius: 999px; }
 
 .project-actions { display: flex; gap: 12px; padding: 12px 20px 20px; margin-top: auto; }
 .action-button {
@@ -70,7 +70,7 @@
 .action-button:first-child { background: transparent !important; color: var(--navy) !important; }
 .action-button:first-child:hover { background: var(--gold) !important; }
 .action-button:last-child { background: var(--red) !important; color: var(--cream) !important; }
-.action-button:last-child:hover { background: #c92c22 !important; }
+.action-button:last-child:hover { background: var(--red-dark) !important; }
 .action-button:only-child { background: transparent !important; color: var(--navy) !important; }
 
 @keyframes loadingPulse { 0% { opacity: 0.6; } 50% { opacity: 0.8; } 100% { opacity: 0.6; } }

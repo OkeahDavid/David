@@ -12,6 +12,26 @@
   --paper: #fffaf0;
   --font: 'Jost', 'Futura', 'Century Gothic', sans-serif;
   --content-width: 1100px;
+  --ink-soft: #27407f;
+  --chip: #e3ecfb;
+  --red-dark: #c92c22;
+}
+
+/* Film palette: sampled from the Meet the Robinsons "D" emblem artwork.
+   Royal blue sky, true red, flat silver standing in for chrome, pale lavender city. */
+[data-theme='film'] {
+  --navy: #0e3473;
+  --navy-far: #16438a;
+  --blue: #355eb1;
+  --sky: #a9c4f0;
+  --red: #e31418;
+  --red-dark: #a3090d;
+  --gold: #d9dbdc;
+  --teal: #8a9fac;
+  --cream: #e9eefb;
+  --paper: #f7f9ff;
+  --ink-soft: #2a4d94;
+  --chip: #d5dcf4;
 }
 
 html { scroll-behavior: smooth; }

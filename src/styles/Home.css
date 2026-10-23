@@ -72,3 +72,16 @@
 @media (prefers-reduced-motion: reduce) {
   .rise, .sun-rays { animation: none; }
 }
+
+/* Film palette: the name sits on a red disc-coloured block, echoing the D emblem */
+[data-theme='film'] .david-text {
+  display: inline-block;
+  padding: 0 0.16em 0.04em;
+  margin-left: 0.04em;
+  color: #fff;
+  background: var(--red);
+  border-radius: 0.22em;
+}
+[data-theme='film'] .hero .btn { box-shadow: 4px 4px 0 var(--red); }
+[data-theme='film'] .hero .btn:hover { box-shadow: 6px 6px 0 var(--red); }
+[data-theme='film'] .hero .btn:not(.btn-light) { border-color: #fff; }

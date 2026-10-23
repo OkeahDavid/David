@@ -24,11 +24,11 @@ const TopNav = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const colors = {
-    icons: '#f8f0dc',
-    text: '#f8f0dc',
-    background: '#0a2463',
-    activeText: '#f8f0dc',
-    inactiveText: '#8fd0ff'
+    icons: 'var(--cream)',
+    text: 'var(--cream)',
+    background: 'var(--navy)',
+    activeText: 'var(--cream)',
+    inactiveText: 'var(--sky)'
   };
 
   const menuItems = React.useMemo(() => [
@@ -147,7 +147,7 @@ const TopNav = () => {
         transition: 'transform 0.2s ease',
         '&:hover': {
           transform: 'scale(1.1)',
-          backgroundColor: 'rgba(248, 240, 220, 0.12)'
+          backgroundColor: 'rgba(255, 255, 255, 0.12)'
         }
       }} 
       href={href} 
@@ -170,7 +170,7 @@ const TopNav = () => {
         sx={{ 
           background: colors.background, 
           boxShadow: 'none',
-          borderBottom: scrolled ? '3px solid #e8372c' : '3px solid transparent',
+          borderBottom: scrolled ? '3px solid var(--red)' : '3px solid transparent',
           zIndex: 1300,
           top: 0,
           left: 0,
@@ -230,7 +230,7 @@ const TopNav = () => {
                         height: '10px',
                         marginTop: '-5px',
                         borderRadius: '50%',
-                        backgroundColor: '#e8372c',
+                        backgroundColor: 'var(--red)',
                         transform: activeSection === item.href.substring(1) ? 'scale(1)' : 'scale(0)',
                         transition: 'transform 0.2s ease'
                       },
@@ -274,7 +274,7 @@ const TopNav = () => {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#0a2463',
+            backgroundColor: 'var(--navy)',
             zIndex: 1299,
             display: 'flex',
             flexDirection: 'column',
@@ -301,13 +301,13 @@ const TopNav = () => {
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
                 padding: '12px 24px',
-                borderBottom: activeSection === item.href.substring(1) ? '4px solid #e8372c' : '4px solid transparent',
+                borderBottom: activeSection === item.href.substring(1) ? '4px solid var(--red)' : '4px solid transparent',
                 transition: 'all 0.2s ease',
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
                 opacity: mobileMenuOpen ? 1 : 0,
                 transitionDelay: mobileMenuOpen ? `${index * 0.08}s` : '0s',
                 '&:hover': {
-                  color: '#f6b93b',
+                  color: 'var(--gold)',
                 },
               }}
             >
