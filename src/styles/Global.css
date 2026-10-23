@@ -1,20 +1,21 @@
+/* Global.css - Todayland design system (retro-futuristic, optimistic, chrome + red on sky blue) */
 :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green-bright: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
+  --sky-deep: #071e5c;
+  --sky: #1f5fd6;
+  --sky-light: #7cc8ff;
+  --red: #e5141a;
+  --red-bright: #ff3b30;
+  --red-deep: #a80a12;
+  --gold: #ffd54a;
+  --cream: #fff8e6;
+  --ink: #0a1f55;
+  --chrome: linear-gradient(135deg, #ffffff 0%, #c9d3dc 28%, #8795a3 52%, #eef3f7 74%, #9aa8b5 100%);
+  --panel: linear-gradient(160deg, rgba(14, 48, 140, 0.78), rgba(8, 28, 92, 0.86));
+  --font-display: 'Righteous', 'Fredoka', 'Trebuchet MS', sans-serif;
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --content-width: 1100px;
 }
 
-/* Global.css - Shared styles and animations */
-
-/* Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;
 }
@@ -22,46 +23,89 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000;
+  background-color: var(--sky-deep);
   color: #fff;
 }
 
-/* Common section spacing */
 section {
-  padding: 80px 0;
+  padding: 56px 0;
 }
 
-/* Consistent heading styles */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 1.15;
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
 }
 
-/* Shared section header */
+/* Section header: red disc badge + chrome capsule streaks */
 .section-header {
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   width: 100%;
-  margin-bottom: 16px;
-  font-weight: 700;
+  margin-bottom: 20px !important;
+  font-family: var(--font-display) !important;
+  font-size: 2.4rem !important;
+  color: #fff;
+  text-shadow: 0 3px 0 rgba(7, 30, 92, 0.55);
+}
+
+.section-header::before {
+  content: '';
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff6a5c, var(--red) 55%, var(--red-deep));
+  box-shadow: 0 0 0 4px #dfe6ec, 0 0 0 7px #7f8d9b, 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.section-header::after {
+  content: '';
+  flex: 1;
+  height: 10px;
+  min-width: 40px;
+  border-radius: 999px;
+  background: var(--chrome);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
+
+/* Glossy chrome-trimmed panel used by every section */
+.todayland-panel {
+  position: relative;
+  background: var(--panel);
+  border-radius: 28px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 0 3px rgba(223, 230, 236, 0.9), 0 0 0 5px rgba(127, 141, 155, 0.8), 0 20px 40px rgba(2, 12, 40, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+/* Container for consistent width */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 /* Focus states for accessibility */
-a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:focus {
-  outline: 2px solid #FF4545;
-  outline-offset: 2px;
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
 }
 
-/* Skip to content link for accessibility */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background-color: #FF4545;
+  background-color: var(--red);
   color: white;
   padding: 8px;
   z-index: 1000;
@@ -72,14 +116,27 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:foc
   top: 0;
 }
 
-/* Container for consistent padding */
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Glossy red "bubble" button */
+.btn-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(180deg, #ff5a4d 0%, var(--red) 50%, var(--red-deep) 100%);
+  box-shadow: 0 0 0 3px #dfe6ec, 0 0 0 5px #7f8d9b, 0 10px 20px rgba(0, 0, 0, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
-
-/* Animation and transitions */
+.btn-bubble:hover { transform: translateY(-3px) scale(1.04); filter: brightness(1.08); }
+.btn-bubble.chrome {
+  color: var(--ink);
+  background: var(--chrome);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 2px 0 #fff;
+}
 
 /* Fade in section base styles */
 .fade-in-section {
@@ -125,9 +182,9 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:foc
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(255, 69, 69, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.35);
   border-radius: 50%;
-  border-top-color: #FF4545;
+  border-top-color: #e5141a;
   animation: spin 1s ease-in-out infinite;
   margin: 0 auto;
 }
@@ -138,7 +195,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:foc
 
 /* Image loading skeleton */
 .image-loading-placeholder {
-  background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+  background: linear-gradient(90deg, #1a3f9a 25%, #2b63d0 50%, #1a3f9a 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   height: 100%;
@@ -162,16 +219,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:foc
 }
 
 /* Responsive adjustments */
-@media (max-width: 960px) {
-  section {
-    padding: 60px 0;
-  }
-}
-
 @media (max-width: 768px) {
-  section {
-    padding: 40px 0;
-  }
 
   .section-header {
     text-align: left;
@@ -183,12 +231,6 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:foc
   
   .fade-in-section {
     transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 30px 0;
   }
 }
 

@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Credits from "./components/Credits";
 import SidebarNav from './components/SidebarNav';
 import Analytics from './components/Analytics';
+import Todayland from './components/Todayland';
 import { Box } from "@mui/material";
 
 import "./App.css";
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
       <Analytics />
+      <Todayland />
       <ThemeProvider theme={theme}>
         <div className="App">
           <header>

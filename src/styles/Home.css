@@ -1,91 +1,120 @@
-/* General styles */
+/* Home / hero */
 .home-container {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  min-height: auto;
-  padding-top: 10vh; /* Reduced from 25vh to 10vh */
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: calc(100vh - 140px);
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.hero-text { max-width: 620px; text-align: left; }
+
+.eyebrow {
+  display: inline-block;
+  padding: 6px 18px;
+  margin-bottom: 18px !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--chrome);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 2px 0 #fff;
+}
+
+.typography-h1 {
+  margin: 0 0 16px !important;
+  font-size: 5.6rem !important;
+  line-height: 1.02 !important;
+  color: #fff;
+  text-shadow: 0 4px 0 rgba(7, 30, 92, 0.6), 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .david-text {
-  color: #FF4545;
+  color: var(--red-bright);
+  -webkit-text-stroke: 3px #fff;
+  paint-order: stroke fill;
+  text-shadow: 0 5px 0 rgba(7, 30, 92, 0.6);
 }
 
-/* Typography styles */
-.typography-h1 {
-  margin: 0;
-  font-size: 6rem;
-  font-weight: bold;
+.tagline {
+  font-size: 1.3rem !important;
+  line-height: 1.55 !important;
+  margin-bottom: 28px !important;
+  color: #eaf4ff;
+  text-shadow: 0 2px 8px rgba(7, 30, 92, 0.6);
+}
+.tagline strong { color: var(--gold); white-space: nowrap; }
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 20px; }
+
+/* Portrait in a chrome ring with Googie streaks */
+.hero-portrait {
+  position: relative;
+  flex-shrink: 0;
+  width: 330px;
+  height: 330px;
+  animation: hover-float 6s ease-in-out infinite;
+}
+@keyframes hover-float { 50% { transform: translateY(-14px) rotate(1deg); } }
+
+.portrait-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 14px;
+  box-sizing: border-box;
+  background: var(--chrome);
+  box-shadow: 0 0 0 6px var(--red), 0 0 0 10px #dfe6ec, 0 0 60px rgba(124, 200, 255, 0.7), 0 24px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Profile image styles */
 .profile-image {
-  position: absolute;
-  right: 20%;
-  top: 10vh; /* Adjusted from 25vh to match the new padding-top */
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  border: 6px solid var(--red);
+  box-sizing: border-box;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .profile-image {
-    right: 10%;
-  }
+.streak {
+  position: absolute;
+  width: 96px;
+  height: 14px;
+  border-radius: 999px 7px 7px 999px;
+  background: linear-gradient(180deg, #9aa8b5, #fff 35%, #c3cdd6 65%, #6f7d8b);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+.s1 { top: -6px;  right: -46px; transform: rotate(-45deg); }
+.s2 { top: 36px;  right: -78px; transform: rotate(-45deg) scale(0.85); }
+.s3 { top: 82px;  right: -104px; transform: rotate(-45deg) scale(0.7); }
+.s4 { bottom: -6px; left: -46px; transform: rotate(135deg); }
+.s5 { bottom: 36px; left: -78px; transform: rotate(135deg) scale(0.85); }
+.s6 { bottom: 82px; left: -104px; transform: rotate(135deg) scale(0.7); }
+
+@media (max-width: 1100px) {
+  .typography-h1 { font-size: 4.4rem !important; }
+  .hero-portrait { width: 270px; height: 270px; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .home-container {
-    padding: 5vh 5vw;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-image {
-    position: static;
-    margin: 5vh auto;
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-
-  .typography-h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-top: 3vh;
-  }
-}
-
-@media (max-width: 600px) {
-  .home-container {
-    padding: 5vh 5vw;
-  }
-
-  .typography-h1 {
-    font-size: 2rem;
-  }
-
-  .profile-image {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-/* Additional adjustments for iPhone 14 Pro Max in portrait mode */
-@media (max-width: 720px) {
-  .home-container {
+    flex-direction: column-reverse;
     justify-content: center;
+    text-align: center;
+    min-height: auto;
+    gap: 48px;
+    padding-top: 6vh;
   }
-
-  .typography-h1 {
-    font-size: 2.2rem;
-  }
+  .hero-text { text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-portrait { width: 220px; height: 220px; }
+  .streak { display: none; }
+  .typography-h1 { font-size: 3.2rem !important; }
+  .tagline { font-size: 1.1rem !important; }
 }

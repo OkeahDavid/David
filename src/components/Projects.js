@@ -170,7 +170,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Box id="projects" className="projects-container">
+    <Box id="projects" className="projects-container container">
       <FadeInSection>
         <Typography variant="h4" className="section-header">
           / projects

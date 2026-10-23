@@ -13,7 +13,8 @@ const About = () => {
   ];
 
   return (
-    <Box id="about" className="about-container">
+    <Box id="about" className="about-container container">
+      <Box className="todayland-panel about-panel">
       <Typography variant="h4" className="section-header">
         / about
       </Typography>
@@ -36,6 +37,7 @@ const About = () => {
       <Typography variant="body1" className="typography-body1">
         Outside of work I'm interested in games, anime, and football.
       </Typography>
+      </Box>
     </Box>
   );
 };

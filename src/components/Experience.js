@@ -59,12 +59,12 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience">
+    <Box id="experience" className="container">
       <Typography variant="h4" className="section-header title-header">
         / experience
       </Typography>
 
-      <Box className="experience-container">
+      <Box className="experience-container todayland-panel">
         <Box className="experience-selector">
           {experiences.map((exp, index) => (
             <Typography 
@@ -83,7 +83,7 @@ const Experience = () => {
           <ul className="experience-responsibilities">
             {experiences[selectedExpIndex].responsibilities.map((item, idx) => (
               <li key={idx} className="experience-item">
-                <span className="item-icon">▹</span>
+                <span className="item-icon" />
                 <span>{item}</span>
               </li>
             ))}

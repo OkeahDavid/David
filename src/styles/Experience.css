@@ -1,153 +1,85 @@
-/* Experience.css */
-
-/* Title header*/
-.title-header {
-  padding-left: 200px;
-}
-
-/* Container styles */
+/* Experience */
 .experience-container {
   display: flex;
-  color: #FFFFFF;
-  padding-top: 20px;
-  padding-left: 200px;
-  padding-right: 200px;
-  gap: 0;
+  gap: 32px;
+  padding: 32px 36px;
+  color: #fff;
 }
 
-/* Experience selector - vertical tab list */
 .experience-selector {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  border-right: 2px solid #333;
-  position: relative;
+  gap: 12px;
 }
 
-/* Company name tab styles */
 .company-name {
   cursor: pointer;
-  padding: 12px 24px 12px 20px;
-  font-size: 0.95rem;
-  color: #888;
-  text-align: left;
+  padding: 10px 26px !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.05rem !important;
+  color: var(--ink);
+  text-align: center;
   white-space: nowrap;
-  transition: color 0.2s, background-color 0.2s;
-  border-left: 3px solid transparent;
+  background: var(--chrome);
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 2px 0 #fff;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
-
-.company-name:hover {
-  color: #FF4545;
-  background-color: rgba(255, 69, 69, 0.05);
-}
+.company-name:hover { transform: translateX(4px); filter: brightness(1.06); }
 
 .company-name.active {
-  color: #FF4545;
-  font-weight: 600;
-  border-left: 3px solid #FF4545;
-  background-color: rgba(255, 69, 69, 0.08);
+  color: #fff;
+  background: linear-gradient(180deg, #ff5a4d 0%, var(--red) 50%, var(--red-deep) 100%);
+  box-shadow: 0 0 0 3px #dfe6ec, 0 6px 14px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  transform: translateX(8px);
 }
 
-/* Experience details styles */
-.experience-details {
-  flex-grow: 1;
-  padding-left: 30px;
-  text-align: left;
-}
+.experience-details { flex-grow: 1; text-align: left; }
 
 .experience-title {
-  font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: 4px !important;
+  font-size: 1.7rem !important;
 }
 
 .experience-company {
-  color: #FF4545;
-  margin-bottom: 2px;
+  color: var(--gold);
+  font-weight: 800 !important;
+  margin-bottom: 2px !important;
 }
 
 .experience-duration {
-  color: #888;
-  font-size: 0.85rem;
-  margin-bottom: 16px;
+  color: var(--sky-light);
+  font-size: 0.95rem !important;
+  margin-bottom: 14px !important;
 }
 
-.experience-responsibilities {
-  padding-left: 0;
-  list-style: none;
-}
+.experience-responsibilities { padding-left: 0; margin: 0; list-style: none; }
 
-/* Experience item styles */
 .experience-item {
   display: flex;
   align-items: flex-start;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  padding: 6px 0;
-  max-width: 600px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  padding: 8px 0;
+  color: #eaf4ff;
 }
 
 .item-icon {
-  color: #FF4545;
-  margin-right: 12px;
-  margin-top: 4px;
-  font-size: 14px;
+  width: 12px;
+  height: 12px;
+  margin: 8px 14px 0 0;
   flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff6a5c, var(--red));
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
 }
 
-/* Responsive adjustments for mobile view */
 @media (max-width: 768px) {
-  .title-header {
-    padding-left: 5vw;
-  }
-
-  .experience-container {
-    flex-direction: column;
-    padding: 20px 5vw;
-  }
-
-  .experience-selector {
-    flex-direction: row;
-    border-right: none;
-    border-bottom: 2px solid #333;
-    margin-bottom: 24px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-  }
-
-  .company-name {
-    padding: 10px 18px;
-    border-left: none;
-    border-bottom: 3px solid transparent;
-    font-size: 0.9rem;
-  }
-
-  .company-name:first-child {
-    padding-left: 0;
-  }
-
-  .company-name.active {
-    border-left: none;
-    border-bottom: 3px solid #FF4545;
-    background-color: transparent;
-  }
-
-  .experience-details {
-    padding-left: 0;
-  }
-
-  .experience-item {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 430px) {
-  .experience-item {
-    font-size: 0.85rem;
-  }
-
-  .company-name {
-    font-size: 0.85rem;
-    padding: 8px 14px;
-  }
+  .experience-container { flex-direction: column; padding: 22px; gap: 20px; }
+  .experience-selector { flex-direction: row; overflow-x: auto; padding: 6px 4px 10px; }
+  .company-name { padding: 8px 18px !important; font-size: 0.95rem !important; }
+  .company-name:hover, .company-name.active { transform: none; }
+  .experience-title { font-size: 1.4rem !important; }
+  .experience-item { font-size: 0.95rem; }
 }

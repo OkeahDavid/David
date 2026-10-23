@@ -2,28 +2,20 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#556cd6',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: '#ff1744',
-    },
-    background: {
-      default: '#fff',
-    },
+    mode: 'dark',
+    primary: { main: '#e5141a' },
+    secondary: { main: '#7cc8ff' },
+    error: { main: '#ff3b30' },
+    background: { default: '#0f3aa8', paper: '#0a2a7a' },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Nunito", "Helvetica", "Arial", sans-serif',
     fontSize: 14,
-    h1: {
-      fontSize: '4rem', // Example size
-    },
-    // Add other custom typography settings
+    h1: { fontFamily: '"Righteous", "Nunito", sans-serif', fontSize: '4rem' },
+    h4: { fontFamily: '"Righteous", "Nunito", sans-serif' },
+    h5: { fontFamily: '"Righteous", "Nunito", sans-serif' },
+    h6: { fontFamily: '"Righteous", "Nunito", sans-serif' },
   },
-  // You can also add other theme settings such as breakpoints, transitions, etc.
 });
 
 export default theme;

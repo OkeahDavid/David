@@ -1,308 +1,139 @@
-/* projects.css */
-
-/* Container styles for the projects section */
+/* Projects */
 .projects-container {
-  max-width: 100%;
-  padding: 40px 0;
-  padding-left: 200px;
-  padding-right: 200px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   align-items: flex-start;
 }
 
-
-/* Project filters styling */
-.project-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
-}
+.project-filters { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
 
 .category-chip {
   cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  background-color: #333 !important;
-  color: #fff !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+  background: var(--chrome) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 2px 0 #fff;
 }
-
-.category-chip:hover {
-  background-color: #444 !important;
-  transform: translateY(-2px);
-}
-
+.category-chip .MuiChip-icon { color: var(--ink) !important; }
+.category-chip:hover { transform: translateY(-3px); filter: brightness(1.06); }
 .category-chip.active {
-  background-color: #FF4545 !important;
+  background: linear-gradient(180deg, #ff5a4d 0%, var(--red) 50%, var(--red-deep) 100%) !important;
   color: #fff !important;
-  font-weight: 500 !important;
+  box-shadow: 0 0 0 3px #dfe6ec, 0 6px 14px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.5);
 }
+.category-chip.active .MuiChip-icon { color: #fff !important; }
 
-/* Grid layout for projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 30px;
   width: 100%;
 }
 
-/* Styles for individual project cards */
 .project-card {
-  background-color: #333;
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  padding: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
   height: 100%;
+  overflow: hidden;
+  color: #fff;
+  background: var(--panel);
+  border-radius: 26px;
+  box-shadow: 0 0 0 3px rgba(223, 230, 236, 0.9), 0 0 0 5px rgba(127, 141, 155, 0.8), 0 16px 32px rgba(2, 12, 40, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card.hovered {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) rotate(-0.6deg);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--red), 0 24px 40px rgba(2, 12, 40, 0.55), 0 0 40px rgba(124, 200, 255, 0.5);
 }
 
-/* Project thumbnail styling */
 .project-thumbnail {
-  height: 180px;
-  width: 100%;
   position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222;
-}
-
-.fallback-icon {
-  font-size: 48px !important;
-  opacity: 0.5;
-}
-
-/* Header styles within the project card */
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  padding: 15px 15px 5px;
+  height: 180px;
+  overflow: hidden;
+  background-color: #0a2a7a;
+  border-bottom: 5px solid #dfe6ec;
 }
+
+.fallback-icon { font-size: 48px !important; opacity: 0.5; }
+
+.project-header { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 16px 18px 6px; box-sizing: border-box; }
 
 .project-title {
   flex: 1;
   text-align: left;
-  font-weight: 600 !important;
-  font-size: 1.2rem !important;
-}
-
-/* Icon container styles */
-.icons-container {
-  display: flex;
-  gap: 2px;
-}
-
-/* Description styles for projects */
-.project-description {
-  font-size: 0.9rem !important;
-  line-height: 1.5 !important;
+  font-size: 1.3rem !important;
+  color: var(--gold);
   margin: 0 !important;
-  padding: 0 15px 10px;
-  text-align: left;
-  color: #ddd;
 }
 
-/* Tech stack styling within projects */
-.tech-stacks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px 15px;
-  align-items: center;
+.project-description {
+  font-size: 0.98rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  padding: 0 18px 10px;
+  text-align: left;
+  color: #eaf4ff;
 }
+
+.tech-stacks { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 18px; align-items: center; }
 
 .tech-chip {
-  background-color: #444;
-  color: #fff; /* Improved contrast for accessibility */
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  cursor: default;
+  padding: 3px 12px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--chrome);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Project action buttons */
-.project-actions {
-  display: flex;
-  gap: 10px;
-  padding: 10px 15px 15px;
-  margin-top: auto;
-}
+.project-actions { display: flex; gap: 12px; padding: 10px 18px 18px; margin-top: auto; }
 
 .action-button {
-  border-radius: 6px !important;
+  border-radius: 999px !important;
   text-transform: none !important;
-  transition: all 0.2s ease !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.95rem !important;
+  padding: 4px 18px !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
 }
+.action-button:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 .action-button:first-child {
-  border-color: #FF4545 !important;
-  color: #FF4545 !important;
-}
-
-.action-button:first-child:hover {
-  background-color: rgba(255, 69, 69, 0.1) !important;
+  background: var(--chrome) !important;
+  border: none !important;
+  color: var(--ink) !important;
+  box-shadow: inset 0 2px 0 #fff, 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 .action-button:last-child {
-  background-color: #FF4545 !important;
-  color: white !important;
+  background: linear-gradient(180deg, #ff5a4d, var(--red) 50%, var(--red-deep)) !important;
+  color: #fff !important;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.35) !important;
 }
+.action-button:only-child { background: var(--chrome) !important; color: var(--ink) !important; }
 
-.action-button:last-child:hover {
-  background-color: #e03c3c !important;
-}
+@keyframes loadingPulse { 0% { opacity: 0.6; } 50% { opacity: 0.8; } 100% { opacity: 0.6; } }
+.project-thumbnail.loading { animation: loadingPulse 1.5s infinite; }
 
-/* Link styling within projects */
-.project-link {
-  color: #FF4545 !important;
-  padding: 5px !important;
-  transition: all 0.2s ease !important;
-}
-
-.project-link:hover {
-  transform: scale(1.1);
-  background-color: rgba(255, 69, 69, 0.1) !important;
-}
-
-.project-link svg {
-  fill: #FF4545;
-  font-size: 20px !important;
-}
-
-/* Preview container styles */
-.preview-container {
-  width: 100%;
-  height: 200px;
-  border-top: 1px solid #444;
-  overflow: hidden;
-  position: relative;
-  margin-top: 10px;
-}
-
-.preview-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.full-view-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  padding: 5px !important;
-  border-radius: 4px !important;
-  transition: all 0.2s ease !important;
-}
-
-.full-view-button:hover {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  transform: scale(1.1);
-}
-
-.full-view-button svg {
-  font-size: 18px !important;
-  color: #333 !important;
-}
-
-/* Loading animation for images */
-@keyframes loadingPulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 0.8; }
-  100% { opacity: 0.6; }
-}
-
-.project-thumbnail.loading {
-  animation: loadingPulse 1.5s infinite;
-}
-
-/* Responsive adjustments for tablet view */
-@media (max-width: 960px) {
-  .projects-container {
-    padding: 30px 5vw;
-  }
-  
-  .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-}
-
-/* Responsive adjustments for mobile view */
 @media (max-width: 768px) {
-  .projects-container {
-    padding: 20px 5vw;
-  }
-
-  .projects-header {
-    text-align: left;
-  }
-  
-  .project-filters {
-    justify-content: flex-start;
-  }
-  
-  .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 15px;
-  }
-
-  .project-thumbnail {
-    height: 160px;
-  }
-  
-  .project-card {
-    max-width: 100%;
-  }
-
-  .project-title {
-    font-size: 1.1rem !important;
-  }
+  .projects-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .project-thumbnail { height: 160px; }
 }
 
-/* Additional adjustments for smaller screens */
 @media (max-width: 430px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .project-thumbnail {
-    height: 140px;
-  }
-  
-  .tech-stacks {
-    justify-content: flex-start;
-  }
-
-  .category-chip .MuiChip-label {
-    padding: 0 8px;
-    font-size: 0.75rem;
-  }
-  
-  .category-chip .MuiChip-icon {
-    font-size: 16px !important;
-  }
-  
-  .project-actions {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .action-button {
-    width: 100%;
-  }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-thumbnail { height: 140px; }
+  .category-chip .MuiChip-label { padding: 0 8px; font-size: 0.75rem; }
+  .project-actions { flex-direction: column; gap: 8px; }
+  .action-button { width: 100%; }
 }

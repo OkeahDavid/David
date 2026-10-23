@@ -1,27 +1,25 @@
-/* credits.css */
+/* Credits */
+#credits { display: flex; align-items: center; padding-top: 40px; position: relative; z-index: 1; }
 
-/* Container for the credits section */
-#credits {
-  display: flex;
-  align-items: center;
-  padding-top: 100px; /* Top padding */
-}
-
-/* Styles for the ending credits text */
 .ending-credits {
-  font-family: "NTR", sans-serif; /* Specified font family */
-  color: var(--slate); /* Color from CSS variable */
-  text-align: center; /* Centered text */
-  width: 100%; /* Full width */
-  font-size: 16px; /* Font size */
-  padding-bottom: 40px; /* Bottom padding */
+  width: 100%;
+  padding-bottom: 28px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(7, 30, 92, 0.9);
 }
 
-/* Responsive adjustments for mobile view */
+.ending-credits .motto {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
 @media (max-width: 600px) {
-  .ending-credits {
-    font-size: 14px; /* Smaller font size for mobile */
-    padding-top: 50px; /* Less padding on top for mobile */
-    padding-bottom: 20px; /* Less padding on bottom for mobile */
-  }
+  .ending-credits { font-size: 0.9rem; }
+  .ending-credits .motto { font-size: 1.4rem; }
 }

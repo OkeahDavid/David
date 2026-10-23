@@ -1,6 +1,6 @@
 .blinking-cursor {
     display: inline-block;
-    background-color: currentColor;
+    background-color: var(--gold);
     margin-left: 5px;
     width: 4px;
     height: 1.1em;

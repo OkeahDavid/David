@@ -24,11 +24,13 @@ const TopNav = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const colors = {
-    icons: '#FF4545',
-    text: '#FF4545',
-    background: scrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.7)',
-    activeText: '#FF4545',
-    inactiveText: '#fff'
+    icons: '#ffffff',
+    text: '#ffffff',
+    background: scrolled
+      ? 'linear-gradient(180deg, rgba(7, 30, 92, 0.96), rgba(12, 44, 130, 0.92))'
+      : 'linear-gradient(180deg, rgba(7, 30, 92, 0.75), rgba(12, 44, 130, 0.55))',
+    activeText: '#ffffff',
+    inactiveText: '#eaf4ff'
   };
 
   const menuItems = React.useMemo(() => [
@@ -147,7 +149,7 @@ const TopNav = () => {
         transition: 'transform 0.2s ease',
         '&:hover': {
           transform: 'scale(1.1)',
-          backgroundColor: 'rgba(255, 69, 69, 0.1)'
+          backgroundColor: 'rgba(255, 255, 255, 0.18)'
         }
       }} 
       href={href} 
@@ -169,7 +171,9 @@ const TopNav = () => {
         position="fixed" 
         sx={{ 
           background: colors.background, 
-          boxShadow: scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none',
+          boxShadow: scrolled ? '0 6px 20px rgba(2, 12, 40, 0.45)' : 'none',
+          borderBottom: '4px solid transparent',
+          borderImage: 'linear-gradient(90deg, #7f8d9b, #ffffff, #c9d3dc, #ffffff, #7f8d9b) 1',
           backdropFilter: 'blur(10px)',
           zIndex: 1300,
           top: 0,
@@ -180,8 +184,8 @@ const TopNav = () => {
       >
         <Toolbar sx={{ 
             justifyContent: 'space-between', 
-            paddingLeft: { xs: '16px', md: '200px' },
-            paddingRight: { xs: '16px', md: '200px' },
+            paddingLeft: { xs: '16px', md: 'max(24px, calc((100vw - 1100px) / 2 + 24px))' },
+            paddingRight: { xs: '16px', md: 'max(24px, calc((100vw - 1100px) / 2 + 24px))' },
             minHeight: { xs: '56px' }
           }}>
           {isMobileOrTablet ? (
@@ -218,31 +222,34 @@ const TopNav = () => {
                     component="a"
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    sx={{ 
-                      padding: '0 15px',
-                      position: 'relative',
-                      '&::after': {
-                        content: '""',
-                        position: 'absolute',
-                        width: activeSection === item.href.substring(1) ? '100%' : '0%',
-                        height: '3px',
-                        bottom: 0,
-                        left: 0,
-                        backgroundColor: colors.activeText,
-                        transition: 'width 0.3s ease'
-                      },
-                      '&:hover::after': {
-                        width: '100%'
+                    sx={{
+                      padding: '6px 20px',
+                      margin: '0 4px',
+                      borderRadius: '999px',
+                      fontFamily: 'var(--font-display)',
+                      background: activeSection === item.href.substring(1)
+                        ? 'linear-gradient(180deg, #ff5a4d 0%, #e5141a 50%, #a80a12 100%)'
+                        : 'transparent',
+                      boxShadow: activeSection === item.href.substring(1)
+                        ? '0 0 0 2px #dfe6ec, 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255,255,255,0.5)'
+                        : 'none',
+                      transition: 'background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease',
+                      '&:hover': {
+                        transform: 'translateY(-2px)',
+                        background: activeSection === item.href.substring(1)
+                          ? undefined
+                          : 'rgba(255, 255, 255, 0.18)'
                       }
                     }}
                   >
-                    <ListItemText 
-                      primary={`/${item.text.toLowerCase()}`} 
-                      sx={{ 
+                    <ListItemText
+                      primary={item.text}
+                      sx={{
                         color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
-                        transition: 'color 0.3s ease',
                         '& .MuiTypography-root': {
-                          fontWeight: activeSection === item.href.substring(1) ? 500 : 400
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '1.05rem',
+                          letterSpacing: '0.04em'
                         }
                       }}
                     />
@@ -268,7 +275,7 @@ const TopNav = () => {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.95)',
+            background: 'linear-gradient(180deg, rgba(7, 30, 92, 0.97), rgba(15, 58, 168, 0.97))',
             zIndex: 1299,
             display: 'flex',
             flexDirection: 'column',
@@ -289,20 +296,22 @@ const TopNav = () => {
               sx={{
                 textDecoration: 'none',
                 color: activeSection === item.href.substring(1) ? colors.activeText : colors.inactiveText,
-                fontSize: '2rem',
-                fontWeight: activeSection === item.href.substring(1) ? 600 : 400,
+                fontSize: '2.2rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 400,
                 padding: '12px 24px',
-                borderLeft: activeSection === item.href.substring(1) ? `3px solid ${colors.activeText}` : '3px solid transparent',
+                borderRadius: '999px',
+                background: activeSection === item.href.substring(1) ? 'linear-gradient(180deg, #ff5a4d, #e5141a 50%, #a80a12)' : 'transparent',
                 transition: 'all 0.2s ease',
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
                 opacity: mobileMenuOpen ? 1 : 0,
                 transitionDelay: mobileMenuOpen ? `${index * 0.08}s` : '0s',
                 '&:hover': {
-                  color: colors.activeText,
+                  color: '#ffd54a',
                 },
               }}
             >
-              /{item.text.toLowerCase()}
+              {item.text}
             </Box>
           ))}
         </Box>
