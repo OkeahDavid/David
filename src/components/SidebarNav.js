@@ -195,6 +195,9 @@ const TopNav = () => {
               >
                 {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
               </IconButton>
+              <Box component="a" href="#home" onClick={(e) => handleNavClick(e, '#home')} aria-label="David home" sx={{ display: 'flex' }}>
+                <img src="/logo.svg" alt="" width="36" height="36" />
+              </Box>
               <Box sx={{ display: 'flex', gap: '8px' }}>
                 {renderIconButton(EmailIcon, 'mailto:okeahdavid@gmail.com', 'Email')}
                 {renderIconButton(LinkedInIcon, 'https://www.linkedin.com/in/david-okeah', 'LinkedIn')}
@@ -203,6 +206,10 @@ const TopNav = () => {
             </>
           ) : (
             <>
+              <Box component="a" href="#home" onClick={(e) => handleNavClick(e, '#home')} aria-label="David home"
+                sx={{ display: 'flex', mr: 2, transition: 'transform 0.3s ease', '&:hover': { transform: 'rotate(-8deg) scale(1.12)' } }}>
+                <img src="/logo.svg" alt="" width="40" height="40" />
+              </Box>
               <List sx={{ display: 'flex' }}>
                 {menuItems.map((item) => (
                   <ListItem
